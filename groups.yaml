@@ -1,0 +1,131 @@
+  default_view:
+    view: yes
+    icon: mdi:sofa
+    entities:
+    - group.actions_control
+    - group.lights_control
+
+  switches:
+    name: Switches
+    icon: mdi:toggle-switch
+    view: yes
+    entities:
+    - group.automation_control
+    - group.power_control
+    - group.lamps_control
+    - group.presence_control
+    - group.media_control
+
+  sensors:
+    name: Sensors
+    icon: mdi:gauge
+    view: yes
+    entities:
+    - group.power_consumption
+    - group.power_consumption_statistics
+    - group.system_status
+    - group.weather
+    - group.sabnzbd
+
+  actions_control:
+    name: Actions
+    entities:
+    - input_boolean.play_music
+    - input_boolean.watch_kodi
+    - input_boolean.watch_tv
+    - input_boolean.play_wiiu
+    - input_boolean.play_gamecube
+    - input_boolean.play_nesmini
+
+  lights_control:
+    name: Lighting
+    entities:
+    - scene.standard
+    - scene.relax
+    - scene.nightlight
+    - scene.energize
+    - scene.movie
+    - scene.snuggery_off
+    - switch.flux
+
+  media_control:
+    name: Media
+    entities:
+    - media_player.kodi
+    - media_player.philips_tv
+
+  automation_control:
+    name: Automation
+    entities:
+    - automation.update_available_notification
+
+  power_control:
+    name: Power
+    icon: mdi:power-socket
+    entities:
+    - switch.power_state_tv
+    - switch.power_state_linn_majik_dsm
+    - switch.power_state_bw_asw10cm
+    - switch.power_state_wiiu
+    - switch.power_state_gamecube
+
+  lamps_control:
+    name: Lamps
+    entities:
+    - light.sphere_lamp_right
+    - light.sphere_lamp_left
+    - light.signal_lamp
+    - light.mood_stripe
+
+  presence_control:
+    name: Presence
+    entities:
+    - switch.presence_b
+
+  system_status:
+    name: System
+    entities:
+    - sensor.cpu_use
+    - sensor.ram_free
+    - sensor.disk_use_
+    - updater.updater
+
+  weather:
+    name: Weather
+    entities:
+    - sun.sun
+
+  power_consumption:
+    name: 'Power Consumption'
+    entities:
+    - sensor.power_consumption_linn_majik_dsm
+    - sensor.power_consumption_bw_asw10cm
+    - sensor.power_consumption_phono
+    - sensor.power_consumption_wii_u
+    - sensor.power_consumption_gamecube
+
+  power_consumption_statistics:
+    name: 'Power Consumption Statistics'
+    entities:
+    - sensor.sensorpower_consumption_statistics_linn_majik_dsm_mean
+    - sensor.sensorpower_consumption_statistics_bw_asw10cm_mean
+    - sensor.sensorpower_consumption_statistics_phono_mean
+    - sensor.sensorpower_consumption_statistics_wii_u_mean
+    - sensor.sensorpower_consumption_statistics_gamecube_mean
+
+  sabnzbd:
+    name: SABnzbd
+    entities:
+    - sensor.sab_disk
+    - sensor.sab_disk_free
+    - sensor.sab_left
+    - sensor.sab_queue
+    - sensor.sab_speed
+    - sensor.sab_status
+
+  snuggery:
+    entities:
+    - light.sphere_lamp_left
+    - light.sphere_lamp_right
+    - light.signal_lamp
+

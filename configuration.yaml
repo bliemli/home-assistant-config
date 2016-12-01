@@ -1,0 +1,63 @@
+homeassistant:
+  name: home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+zone:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: 20
+  icon: mdi:home
+
+frontend:
+http:
+  ssl_certificate: /home/pi/.homeassistant/karter.bliemli.ch.crt
+  ssl_key: /home/pi/.homeassistant/karter.bliemli.ch.key
+
+updater:
+  reporting: no
+
+discovery:
+sun:
+
+light:
+  platform: hue
+  host: 192.168.1.12
+
+logger:
+  default: error
+
+device_tracker:
+- platform: locative
+  track_new_devices: yes
+
+media_player:
+- platform: kodi
+  host: http://ocean.bliemli.ch
+  port: 8080
+  name: Kodi
+#- platform: philips_js
+#  host: 192.168.1.9
+#  name: Philips TV
+
+notify:
+- platform: pushover
+  name: pushover
+  api_key: !secret pushover_api_key
+  user_key: !secret pushover_user_key
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+
+automation: !include_dir_merge_list automation
+input_boolean: !include input_booleans.yaml
+shell_command: !include shell_commands.yaml
+
+switch: !include switches.yaml
+sensor: !include sensors.yaml
+

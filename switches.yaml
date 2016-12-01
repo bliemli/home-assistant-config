@@ -1,0 +1,56 @@
+- platform: command_line
+  switches:
+    power_state_wiiu:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:1,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:1,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[0] == 1 }}'
+    power_state_tv:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:2,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:2,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[1] == 1 }}'
+    power_state_gamecube:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:3,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:3,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[2] == 1 }}'
+    power_state_phono:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:4,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:4,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[3] == 1 }}'
+    power_state_linn_majik_dsm:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:5,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:5,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[4] == 1 }}'
+    power_state_bw_asw10cm:
+      command_on: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:6,%22state%22:1%7D' &> /dev/null"
+      command_off: "curl -s -X GET 'http://192.168.1.44/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:6,%22state%22:0%7D' &> /dev/null"
+      command_state: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+      value_template: '{{ value_json.data.switch[5] == 1 }}'
+
+- platform: template
+  switches:
+    presence_b:
+      friendly_name: "FIXME"
+      value_template: >
+        {% if is_state('device_tracker.FIXME', 'home') %}
+          on
+        {% else %}
+          off
+        {% endif %}
+      turn_on:
+        service: device_tracker.see
+        entity_id: device_tracker.FIXME
+        data:
+          dev_id: FIXME
+          location_name: home
+      turn_off:
+        service: device_tracker.see
+        entity_id: device_tracker.FIXME
+        data:
+          dev_id: FIXME
+          location_name: not_home
+

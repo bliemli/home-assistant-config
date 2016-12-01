@@ -1,0 +1,93 @@
+    scene.standard:
+      icon: mdi:brightness-7
+      friendly_name: Standard
+    scene.relax:
+      icon: mdi:brightness-4
+      friendly_name: Relax
+    scene.nightlight:
+      icon: mdi:brightness-2
+      friendly_name: Nightlight
+    scene.energize:
+      icon: mdi:brightness-5
+      friendly_name: Energize
+    scene.movie:
+      icon: mdi:brightness-3
+      friendly_name: Movie
+    scene.snuggery_off:
+      icon: mdi:brightness-1
+      friendly_name: All lights off
+
+    media_player.kodi:
+      icon: mdi:kodi
+
+    input_slider.oh_volume:
+      icon: mdi:volume-high
+
+    light.sphere_lamp_right:
+      icon: mdi:blur-radial
+      friendly_name: 'Sphere Lamp right'
+    light.sphere_lamp_left:
+      icon: mdi:blur-radial
+      friendly_name: 'Sphere Lamp left'
+    light.signal_lamp:
+      icon: mdi:rename-box
+      friendly_name: 'Signal Lamp'
+    light.mood_stripe:
+      hidden: true
+      friendly_name: 'Mood Stripe'
+
+    switch.power_state_wiiu:
+      icon: mdi:power
+      friendly_name: Wii U
+    switch.power_state_gamecube:
+      icon: mdi:power
+      friendly_name: Gamecube
+    switch.power_state_tv:
+      icon: mdi:power
+      friendly_name: TV
+    switch.power_state_phono:
+      icon: mdi:power
+      friendly_name: Phono
+      hidden: true
+    switch.power_state_linn_majik_dsm:
+      icon: mdi:power
+      friendly_name: Linn Majik DSM
+    switch.power_state_bw_asw10cm:
+      icon: mdi:power
+      friendly_name: B&W ASW10CM
+
+    switch.presence_b:
+      icon: mdi:ghost
+
+    sensor.cpu_use:
+      icon: mdi:gauge
+
+    sensor.sab_disk:
+      icon: mdi:harddisk
+    sensor.sab_disk_free:
+      icon: mdi:harddisk
+    sensor.sab_left:
+      icon: mdi:download
+    sensor.sab_queue:
+      icon: mdi:plus-circle
+    sensor.sab_speed:
+      icon: mdi:speedometer
+    sensor.sab_status:
+      icon: mdi:pulse
+
+    sensor.power_consumption_linn_majik_dsm:
+      icon: mdi:power-socket
+      friendly_name: Linn Majik DSM
+    sensor.power_consumption_bw_asw10cm:
+      icon: mdi:power-socket
+      friendly_name: B&W ASW10CM
+    sensor.power_consumption_phono:
+      icon: mdi:power-socket
+      friendly_name: Phono
+    sensor.power_consumption_wii_u:
+      icon: mdi:power-socket
+      friendly_name: 'Wii U'
+    sensor.power_consumption_gamecube:
+      icon: mdi:power-socket
+      friendly_name: Gamecube
+

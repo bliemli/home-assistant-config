@@ -1,0 +1,49 @@
+- alias: 'Switch source to TV when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.watch_tv
+#    from: 'off'
+    state: 'on'
+  condition:
+    condition: template
+    value_template: '{{ states.media_player.philips_tv.attributes.source != "Watch TV" }}'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.philips_tv
+      source: "Watch TV"
+
+- alias: 'Switch source to amp when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.watch_kodi
+    - input_boolean.play_wiiu
+    - input_boolean.play_nesmini
+    from: 'off'
+    to: 'on'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.philips_tv
+      source: "Linn Majik"
+#  - delay: 00:01:00
+#  - service: shell_command.tv_linn_majik
+
+- alias: 'Switch source to Gamecube when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.play_gamecube
+    from: 'off'
+    to: 'on'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.philips_tv
+      source: "Gamecube"
+#  - service: shell_command.tv_gamecube
+#  - delay: 00:01:00
+#  - service: shell_command.tv_gamecube
+

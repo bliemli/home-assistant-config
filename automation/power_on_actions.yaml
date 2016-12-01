@@ -1,0 +1,68 @@
+- alias: 'Switch on amp when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.play_music
+    - input_boolean.watch_kodi
+    - input_boolean.play_wiiu
+    - input_boolean.play_nesmini
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.power_state_linn_majik_dsm
+
+- alias: 'Switch on TV when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.watch_kodi
+    - input_boolean.watch_tv
+    - input_boolean.play_wiiu
+    - input_boolean.play_gamecube
+    - input_boolean.play_nesmini
+    from: 'off'
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.power_state_tv
+
+- alias: 'Switch on subwoofer when needed.'
+  trigger:
+    platform: state
+    entity_id:
+    - input_boolean.play_music
+    - input_boolean.watch_kodi
+    - input_boolean.play_wiiu
+    - input_boolean.play_nesmini
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.power_state_bw_asw10cm
+
+- alias: 'Switch on Wii U when needed.'
+  trigger:
+    platform: state
+    entity_id: input_boolean.play_wiiu
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.power_state_wiiu
+
+- alias: 'Switch on Gamecube when needed.'
+  trigger:
+    platform: state
+    entity_id: input_boolean.play_gamecube
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.power_state_gamecube
+

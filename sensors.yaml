@@ -1,0 +1,70 @@
+- platform: systemmonitor
+  resources:
+  - type: disk_use_percent
+    arg: /
+  - type: memory_free
+  - type: processor_use
+
+- platform: sabnzbd
+  name: SAB
+  api_key: !secret sabnzbd_api_key
+  host: !secret sabnzbd_host
+  monitored_variables:
+  - 'current_status'
+  - 'speed'
+  - 'queue_size'
+  - 'queue_remaining'
+  - 'disk_size'
+  - 'disk_free'
+
+- platform: command_line
+  name: 'Power Consumption Wii U'
+  command: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[0] }}'
+  unit_of_measurement: 'W'
+
+- platform: command_line
+  name: 'Power Consumption Gamecube'
+  command: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[2] }}'
+  unit_of_measurement: 'W'
+
+- platform: command_line
+  name: 'Power Consumption Phono'
+  command: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[3] }}'
+  unit_of_measurement: 'W'
+  scan_interval: 3
+
+- platform: command_line
+  name: 'Power Consumption Linn Majik DSM'
+  command: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[4] }}'
+  unit_of_measurement: 'W'
+
+- platform: command_line
+  name: 'Power Consumption B&W ASW10CM'
+  command: "curl -s -X GET 'http://192.168.1.44/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
+  value_template: '{{ value_json.data.watt[5] }}'
+  unit_of_measurement: 'W'
+
+- platform: statistics
+  entity_id: sensor.power_consumption_bw_asw10cm
+  name: "Power Consumption Statistics B&W ASW10CM"
+
+- platform: statistics
+  entity_id: sensor.power_consumption_gamecube
+  name: "Power Consumption Statistics Gamecube"
+
+- platform: statistics
+  entity_id: sensor.power_consumption_linn_majik_dsm
+  name: "Power Consumption Statistics Linn Majik DSM"
+
+- platform: statistics
+  entity_id: sensor.power_consumption_phono
+  name: "Power Consumption Statistics Phono"
+
+- platform: statistics
+  entity_id: sensor.power_consumption_wii_u
+  name: "Power Consumption Statistics Wii U"
+

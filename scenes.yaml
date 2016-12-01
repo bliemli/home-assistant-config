@@ -1,0 +1,117 @@
+- name: standard
+  entities:
+    light.sphere_lamp_left:
+      state: on
+      xy_color: [0.4575, 0.4101]
+      color_temp: 365
+      brightness: 254
+      transition: 10
+    light.sphere_lamp_right:
+      state: on
+      xy_color: [0.4575, 0.4101]
+      color_temp: 365
+      brightness: 254
+      transition: 10
+    light.signal_lamp:
+      state: on
+      xy_color: [0.4575, 0.4101]
+      color_temp: 365
+      brightness: 1
+      transition: 10
+
+- name: relax
+  entities:
+    light.sphere_lamp_left:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 144
+      transition: 10
+    light.sphere_lamp_right:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 144
+      transition: 10
+    light.signal_lamp:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+
+- name: nightlight
+  entities:
+    light.sphere_lamp_left:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+    light.sphere_lamp_right:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+    light.signal_lamp:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+
+- name: energize
+  entities:
+    light.sphere_lamp_left:
+      state: on
+      xy_color: [0.3151, 0.3251]
+      color_temp: 155
+      brightness: 203
+      transition: 10
+    light.sphere_lamp_right:
+      state: on
+      xy_color: [0.3151, 0.3251]
+      color_temp: 155
+      brightness: 203
+      transition: 10
+    light.signal_lamp:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+
+- name: movie
+  entities:
+    light.sphere_lamp_left:
+      state: on
+      xy_color: [0.3684, 0.3716]
+      color_temp: 231
+      brightness: 41
+      transition: 10
+    light.sphere_lamp_right:
+      state: on
+      xy_color: [0.3684, 0.3716]
+      color_temp: 231
+      brightness: 41
+      transition: 10
+    light.signal_lamp:
+      state: on
+      xy_color: [0.5125, 0.4149]
+      color_temp: 467
+      brightness: 1
+      transition: 10
+
+- name: snuggery_off
+  entities:
+    light.sphere_lamp_left:
+      state: off
+      transition: 10
+    light.sphere_lamp_right:
+      state: off
+      transition: 10
+    light.signal_lamp:
+      state: off
+      transition: 10
+
