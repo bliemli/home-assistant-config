@@ -34,23 +34,23 @@
 - platform: template
   switches:
     presence_b:
-      friendly_name: "FIXME"
+      friendly_name: "Benj"
       value_template: >
-        {% if is_state('device_tracker.FIXME', 'home') %}
+        {% if is_state('device_tracker.4ad664cee97e4002bcca1776d97a91ef', 'home') %}
           on
         {% else %}
           off
         {% endif %}
       turn_on:
         service: device_tracker.see
-        entity_id: device_tracker.FIXME
+        entity_id: device_tracker.4ad664cee97e4002bcca1776d97a91ef
         data:
-          dev_id: FIXME
+          dev_id: 4ad664cee97e4002bcca1776d97a91ef
           location_name: home
       turn_off:
         service: device_tracker.see
-        entity_id: device_tracker.FIXME
+        entity_id: device_tracker.4ad664cee97e4002bcca1776d97a91ef
         data:
-          dev_id: FIXME
+          dev_id: 4ad664cee97e4002bcca1776d97a91ef
           location_name: not_home
 

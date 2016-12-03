@@ -14,7 +14,7 @@
     - group.power_control
     - group.lamps_control
     - group.presence_control
-    - group.media_control
+#    - group.media_control
 
   sensors:
     name: Sensors

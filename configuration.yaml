@@ -16,8 +16,8 @@ zone:
 
 frontend:
 http:
-  ssl_certificate: /home/pi/.homeassistant/karter.bliemli.ch.crt
-  ssl_key: /home/pi/.homeassistant/karter.bliemli.ch.key
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
 
 updater:
   reporting: no
@@ -27,7 +27,7 @@ sun:
 
 light:
   platform: hue
-  host: 192.168.1.12
+  host: !secret hue_host
 
 logger:
   default: error
@@ -38,12 +38,9 @@ device_tracker:
 
 media_player:
 - platform: kodi
-  host: http://ocean.bliemli.ch
-  port: 8080
+  host: !secret kodi_host
+  port: !secret kodi_port
   name: Kodi
-#- platform: philips_js
-#  host: 192.168.1.9
-#  name: Philips TV
 
 notify:
 - platform: pushover

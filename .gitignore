@@ -1,0 +1,5 @@
+*.crt
+*.key
+known_devices.yaml
+phue.conf
+secrets.yaml
