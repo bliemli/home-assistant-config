@@ -3,6 +3,13 @@
 My Home Assistant (https://home-assistant.io) configuration files and screenshots.
 
 
+## Table of contents
+
+* [Controlled devices](#controlled-devices)
+* [What's special?](#whats-special)
+* [Screenshots](#screenshots)
+
+
 ## Controlled devices
 
 * [Max Hauri maxSMART Power Station](http://www.maxsmart.ch/de/produkte-de/power-station-de.html)
@@ -26,6 +33,11 @@ My Home Assistant (https://home-assistant.io) configuration files and screenshot
 The Max Hauri maxSMART Power Station can be used to read power consumption and to control socket states. This allows to automatically turn off power for devices that are in standby and which Home Assistant knows are not in use anymore. This is determined by the state of binary switches ('Watch movie', 'Listen to music' etc.).
 
 Another possibility is to automatically switch the source of the amplifier to 'Phono' if the turntable is using energy.
+
+
+### Presence detection override switch
+
+Automatic presence detection isn't new, but too often I found myself manually setting my own presence via the developer tools because of a restart of Home Assistant. So I added a template-based switch which you might find useful. It reflects the real state but lets you manually override it.
 
 
 ## Screenshots
