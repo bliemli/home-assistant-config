@@ -1,5 +1,9 @@
 *.crt
 *.key
+*.log
+*.db
+.HA_VERSION
 known_devices.yaml
 phue.conf
 secrets.yaml
+deps/
