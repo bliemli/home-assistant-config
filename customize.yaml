@@ -20,9 +20,6 @@
     media_player.kodi:
       icon: mdi:kodi
 
-    input_slider.oh_volume:
-      icon: mdi:volume-high
-
     light.sphere_lamp_right:
       icon: mdi:blur-radial
       friendly_name: 'Sphere Lamp right'
@@ -32,6 +29,8 @@
     light.signal_lamp:
       icon: mdi:rename-box
       friendly_name: 'Signal Lamp'
+    light.office_lamp:
+      friendly_name: 'Office Lamp'
     light.mood_stripe:
       hidden: true
       friendly_name: 'Mood Stripe'

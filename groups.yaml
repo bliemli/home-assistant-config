@@ -75,6 +75,7 @@
     - light.sphere_lamp_right
     - light.sphere_lamp_left
     - light.signal_lamp
+    - light.office_lamp
     - light.mood_stripe
 
   presence_control:
