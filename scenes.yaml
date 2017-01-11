@@ -1,3 +1,32 @@
+- name: music
+  entities:
+    input_select.media_control:
+      option: music
+- name: movies
+  entities:
+    input_select.media_control:
+      option: movies
+- name: tv
+  entities:
+    input_select.media_control:
+      option: tv
+- name: wii_u
+  entities:
+    input_select.media_control:
+      option: wii_u
+- name: gamecube
+  entities:
+    input_select.media_control:
+      option: gamecube
+- name: nes_mini
+  entities:
+    input_select.media_control:
+      option: nes_mini
+- name: media_off
+  entities:
+    input_select.media_control:
+      option: media_off
+
 - name: standard
   entities:
     light.sphere_lamp_left:

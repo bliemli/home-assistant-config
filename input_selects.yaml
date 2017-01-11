@@ -1,0 +1,10 @@
+  media_control:
+    options:
+    - music
+    - movies
+    - tv
+    - wii_u
+    - gamecube
+    - nes_mini
+    - media_off
+

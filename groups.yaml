@@ -30,12 +30,13 @@
   actions_control:
     name: Actions
     entities:
-    - input_boolean.play_music
-    - input_boolean.watch_kodi
-    - input_boolean.watch_tv
-    - input_boolean.play_wiiu
-    - input_boolean.play_gamecube
-    - input_boolean.play_nesmini
+    - scene.music
+    - scene.movies
+    - scene.tv
+    - scene.wii_u
+    - scene.gamecube
+    - scene.nes_mini
+    - scene.media_off
 
   lights_control:
     name: Lighting
@@ -46,7 +47,6 @@
     - scene.energize
     - scene.movie
     - scene.snuggery_off
-    - switch.flux
 
   media_control:
     name: Media
