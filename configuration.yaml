@@ -15,9 +15,9 @@ zone:
   icon: mdi:home
 
 frontend:
-http:
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
+#http:
+#  ssl_certificate: !secret ssl_certificate
+#  ssl_key: !secret ssl_key
 
 updater:
   reporting: no
@@ -32,15 +32,13 @@ light:
 logger:
   default: error
 
-device_tracker:
-- platform: locative
-  track_new_devices: yes
-
 media_player:
 - platform: kodi
   host: !secret kodi_host
-  port: !secret kodi_port
   name: Kodi
+#- platform: philips_js
+#  host: !secret philips_tv_host
+#  name: Philips TV
 
 notify:
 - platform: pushover

@@ -35,11 +35,6 @@ The Max Hauri maxSMART Power Station can be used to read power consumption and t
 Another possibility is to automatically switch the source of the amplifier to 'Phono' if the turntable is using energy.
 
 
-### Presence detection override switch
-
-Automatic presence detection isn't new, but too often I found myself manually setting my own presence via the developer tools because of a restart of Home Assistant. So I added a template-based switch which you might find useful. It reflects the real state but lets you manually override it.
-
-
 ## Screenshots
 
 ![Screenshot 1](images/ha01.png)
