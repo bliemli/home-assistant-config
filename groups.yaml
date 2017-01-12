@@ -2,6 +2,7 @@
     view: yes
     icon: mdi:sofa
     entities:
+    - sensor.media_active_setting
     - group.actions_control
     - group.lights_control
 
