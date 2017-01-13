@@ -79,11 +79,6 @@
     - light.office_lamp
     - light.mood_stripe
 
-  presence_control:
-    name: Presence
-    entities:
-    - switch.presence_b
-
   system_status:
     name: System
     entities:
