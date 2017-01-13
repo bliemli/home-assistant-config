@@ -15,7 +15,7 @@
     - group.power_control
     - group.lamps_control
     - group.presence_control
-#    - group.media_control
+#    - group.mediaplayer_control
 
   sensors:
     name: Sensors
@@ -49,7 +49,7 @@
     - scene.movie
     - scene.snuggery_off
 
-  media_control:
+  mediaplayer_control:
     name: Media
     entities:
     - media_player.kodi
