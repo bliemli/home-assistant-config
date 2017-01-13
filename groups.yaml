@@ -29,7 +29,7 @@
     - group.sabnzbd
 
   media_control:
-    name: Actions
+    name: Media
     entities:
     - scene.music
     - scene.movies

@@ -1,13 +1,17 @@
     scene.music:
+      friendly_name: Music
       icon: mdi:speaker
     scene.movies:
+      friendly_name: Movies
       icon: mdi:kodi
     scene.tv:
+      friendly_name: TV
       icon: mdi:television
     scene.wii_u:
       friendly_name: Wii U
       icon: mdi:wiiu
     scene.gamecube:
+      friendly_name: Gamecube
       icon: mdi:cube
     scene.nes_mini:
       friendly_name: NES mini
@@ -72,9 +76,6 @@
     switch.power_state_bw_asw10cm:
       icon: mdi:power
       friendly_name: B&W ASW10CM
-
-    switch.presence_b:
-      icon: mdi:ghost
 
     sensor.cpu_use:
       icon: mdi:gauge

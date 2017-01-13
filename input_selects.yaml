@@ -1,10 +1,11 @@
   media_control:
+    initial: 'Off'
     options:
-    - music
-    - movies
-    - tv
-    - wii_u
-    - gamecube
-    - nes_mini
-    - media_off
+    - Music
+    - Movies
+    - TV
+    - Wii U
+    - Gamecube
+    - NES mini
+    - 'Off'
 
