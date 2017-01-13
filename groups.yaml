@@ -3,7 +3,7 @@
     icon: mdi:sofa
     entities:
     - sensor.media_active_setting
-    - group.actions_control
+    - group.media_control
     - group.lights_control
 
   switches:
@@ -28,7 +28,7 @@
     - group.weather
     - group.sabnzbd
 
-  actions_control:
+  media_control:
     name: Actions
     entities:
     - scene.music
