@@ -55,13 +55,6 @@
       icon: mdi:power
       friendly_name: B&W ASW10CM
 
-    sensor.sab_left:
-      icon: mdi:download
-    sensor.sab_speed:
-      icon: mdi:speedometer
-    sensor.sab_status:
-      icon: mdi:pulse
-
     sensor.power_consumption_linn_majik_dsm:
       icon: mdi:power-socket
       friendly_name: Linn Majik DSM

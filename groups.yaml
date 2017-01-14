@@ -2,6 +2,9 @@
     view: yes
     icon: mdi:sofa
     entities:
+    - sensor.sab_left
+    - sensor.sab_speed
+    - sensor.sab_status
     - group.actions_control
     - group.lights_control
 
@@ -23,7 +26,6 @@
     entities:
     - group.power_consumption
     - group.power_consumption_statistics
-    - group.sabnzbd
 
   actions_control:
     name: Actions
@@ -92,13 +94,6 @@
     - sensor.sensorpower_consumption_statistics_phono_mean
     - sensor.sensorpower_consumption_statistics_wii_u_mean
     - sensor.sensorpower_consumption_statistics_gamecube_mean
-
-  sabnzbd:
-    name: SABnzbd
-    entities:
-    - sensor.sab_left
-    - sensor.sab_speed
-    - sensor.sab_status
 
   snuggery:
     entities:
