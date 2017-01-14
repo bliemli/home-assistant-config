@@ -31,7 +31,7 @@
 #  - delay: 00:01:00
 #  - service: shell_command.tv_linn_majik
 
-- alias: 'Switch source to Gamecube when needed.'
+- alias: 'Switch source to GameCube when needed.'
   trigger:
     platform: state
     entity_id:
@@ -42,7 +42,7 @@
     service: media_player.select_source
     data:
       entity_id: media_player.philips_tv
-      source: "Gamecube"
+      source: "GameCube"
 #  - service: shell_command.tv_gamecube
 #  - delay: 00:01:00
 #  - service: shell_command.tv_gamecube

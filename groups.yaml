@@ -23,8 +23,6 @@
     entities:
     - group.power_consumption
     - group.power_consumption_statistics
-    - group.system_status
-    - group.weather
     - group.sabnzbd
 
   actions_control:
@@ -46,7 +44,6 @@
     - scene.energize
     - scene.movie
     - scene.snuggery_off
-    - switch.flux
 
   media_control:
     name: Media
@@ -78,24 +75,6 @@
     - light.office_lamp
     - light.mood_stripe
 
-  presence_control:
-    name: Presence
-    entities:
-    - switch.presence_b
-
-  system_status:
-    name: System
-    entities:
-    - sensor.cpu_use
-    - sensor.ram_free
-    - sensor.disk_use_
-    - updater.updater
-
-  weather:
-    name: Weather
-    entities:
-    - sun.sun
-
   power_consumption:
     name: 'Power Consumption'
     entities:
@@ -117,10 +96,7 @@
   sabnzbd:
     name: SABnzbd
     entities:
-    - sensor.sab_disk
-    - sensor.sab_disk_free
     - sensor.sab_left
-    - sensor.sab_queue
     - sensor.sab_speed
     - sensor.sab_status
 

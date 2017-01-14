@@ -55,7 +55,7 @@
     data:
       entity_id: switch.power_state_wiiu
 
-- alias: 'Switch on Gamecube when needed.'
+- alias: 'Switch on GameCube when needed.'
   trigger:
     platform: state
     entity_id: input_boolean.play_gamecube

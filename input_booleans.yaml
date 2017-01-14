@@ -15,7 +15,7 @@
     icon: mdi:wiiu
     initial: off
   play_gamecube:
-    name: Play on Gamecube
+    name: Play on GameCube
     icon: mdi:cube
     initial: off
   play_nesmini:
