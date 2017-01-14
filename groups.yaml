@@ -16,7 +16,6 @@
     entities:
     - group.power_control
     - group.lamps_control
-    - group.presence_control
 
   sensors:
     name: Sensors
