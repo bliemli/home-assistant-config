@@ -13,7 +13,6 @@
     icon: mdi:toggle-switch
     view: yes
     entities:
-    - group.automation_control
     - group.power_control
     - group.lamps_control
     - group.presence_control
@@ -52,11 +51,6 @@
     entities:
     - media_player.kodi
     - media_player.philips_tv
-
-  automation_control:
-    name: Automation
-    entities:
-    - automation.update_available_notification
 
   power_control:
     name: Power
