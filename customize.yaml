@@ -17,9 +17,6 @@
       icon: mdi:brightness-1
       friendly_name: All lights off
 
-    media_player.kodi:
-      icon: mdi:kodi
-
     light.sphere_lamp_right:
       icon: mdi:blur-radial
       friendly_name: 'Sphere Lamp right'

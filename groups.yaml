@@ -15,8 +15,6 @@
     entities:
     - group.power_control
     - group.lamps_control
-    - group.presence_control
-#    - group.media_control
 
   sensors:
     name: Sensors
@@ -45,12 +43,6 @@
     - scene.energize
     - scene.movie
     - scene.snuggery_off
-
-  media_control:
-    name: Media
-    entities:
-    - media_player.kodi
-    - media_player.philips_tv
 
   power_control:
     name: Power
