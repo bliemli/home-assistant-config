@@ -5,13 +5,6 @@
       friendly_name: Media setting
       entity_id: input_select.media_control
 
-- platform: systemmonitor
-  resources:
-  - type: disk_use_percent
-    arg: /
-  - type: memory_free
-  - type: processor_use
-
 - platform: sabnzbd
   name: SAB
   api_key: !secret sabnzbd_api_key
@@ -19,10 +12,7 @@
   monitored_variables:
   - 'current_status'
   - 'speed'
-  - 'queue_size'
   - 'queue_remaining'
-  - 'disk_size'
-  - 'disk_free'
 
 - platform: command_line
   name: 'Power Consumption Wii U'
@@ -31,7 +21,7 @@
   unit_of_measurement: 'W'
 
 - platform: command_line
-  name: 'Power Consumption Gamecube'
+  name: 'Power Consumption GameCube'
   command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
   value_template: '{{ value_json.data.watt[2] }}'
   unit_of_measurement: 'W'
@@ -61,7 +51,7 @@
 
 - platform: statistics
   entity_id: sensor.power_consumption_gamecube
-  name: "Power Consumption Statistics Gamecube"
+  name: "Power Consumption Statistics GameCube"
 
 - platform: statistics
   entity_id: sensor.power_consumption_linn_majik_dsm

@@ -62,7 +62,7 @@
       friendly_name: Wii U
     switch.power_state_gamecube:
       icon: mdi:power
-      friendly_name: Gamecube
+      friendly_name: GameCube
     switch.power_state_tv:
       icon: mdi:power
       friendly_name: TV
@@ -76,22 +76,6 @@
     switch.power_state_bw_asw10cm:
       icon: mdi:power
       friendly_name: B&W ASW10CM
-
-    sensor.cpu_use:
-      icon: mdi:gauge
-
-    sensor.sab_disk:
-      icon: mdi:harddisk
-    sensor.sab_disk_free:
-      icon: mdi:harddisk
-    sensor.sab_left:
-      icon: mdi:download
-    sensor.sab_queue:
-      icon: mdi:plus-circle
-    sensor.sab_speed:
-      icon: mdi:speedometer
-    sensor.sab_status:
-      icon: mdi:pulse
 
     sensor.power_consumption_linn_majik_dsm:
       icon: mdi:power-socket
@@ -107,5 +91,5 @@
       friendly_name: 'Wii U'
     sensor.power_consumption_gamecube:
       icon: mdi:power-socket
-      friendly_name: Gamecube
+      friendly_name: GameCube
 

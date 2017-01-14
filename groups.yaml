@@ -3,6 +3,9 @@
     icon: mdi:sofa
     entities:
     - sensor.media_active_setting
+    - sensor.sab_left
+    - sensor.sab_speed
+    - sensor.sab_status
     - group.media_control
     - group.lights_control
 
@@ -11,7 +14,6 @@
     icon: mdi:toggle-switch
     view: yes
     entities:
-    - group.automation_control
     - group.power_control
     - group.lamps_control
     - group.presence_control
@@ -24,9 +26,6 @@
     entities:
     - group.power_consumption
     - group.power_consumption_statistics
-    - group.system_status
-    - group.weather
-    - group.sabnzbd
 
   media_control:
     name: Media
@@ -55,11 +54,6 @@
     - media_player.kodi
     - media_player.philips_tv
 
-  automation_control:
-    name: Automation
-    entities:
-    - automation.update_available_notification
-
   power_control:
     name: Power
     icon: mdi:power-socket
@@ -79,19 +73,6 @@
     - light.office_lamp
     - light.mood_stripe
 
-  system_status:
-    name: System
-    entities:
-    - sensor.cpu_use
-    - sensor.ram_free
-    - sensor.disk_use_
-    - updater.updater
-
-  weather:
-    name: Weather
-    entities:
-    - sun.sun
-
   power_consumption:
     name: 'Power Consumption'
     entities:
@@ -109,16 +90,6 @@
     - sensor.sensorpower_consumption_statistics_phono_mean
     - sensor.sensorpower_consumption_statistics_wii_u_mean
     - sensor.sensorpower_consumption_statistics_gamecube_mean
-
-  sabnzbd:
-    name: SABnzbd
-    entities:
-    - sensor.sab_disk
-    - sensor.sab_disk_free
-    - sensor.sab_left
-    - sensor.sab_queue
-    - sensor.sab_speed
-    - sensor.sab_status
 
   snuggery:
     entities:
