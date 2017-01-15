@@ -10,6 +10,14 @@
   - 'disk_size'
   - 'disk_free'
 
+- platform: template
+  sensors:
+    sensor.sabnzbd_left_gb:
+      friendly_name: 'SAB Left'
+      unit_of_measurement: 'GB'
+      value_template: '{{ states.sensor.sabnzbd_left.state | divide(1024) }}'
+      entity_id: sensor.sabnzbd_left
+
 - platform: command_line
   name: 'Power Consumption Wii U'
   command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
