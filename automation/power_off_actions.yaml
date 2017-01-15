@@ -40,9 +40,11 @@
   condition:
     condition: or
     conditions:
-    - condition: numeric_state
-      entity_id: sensor.power_consumption_linn_majik_dsm
-      below: 26
+    - condition: template
+      value_template: '{{ states.sensor.power_consumption_linn_majik_dsm.state < 26 }}'
+#    - condition: numeric_state
+#      entity_id: sensor.power_consumption_linn_majik_dsm
+#      below: 26
     - condition: state
       entity_id: input_select.media_control
       state: 'Off'
@@ -101,9 +103,8 @@
   condition:
     condition: or
     conditions:
-    - condition: numeric_state
-      entity_id: sensor.power_consumption_bw_asw10cm
-      below: 3
+    - condition: template
+      value_template: '{{ states.sensor.power_consumption_bw_asw10cm.state < 3 }}'
     - condition: state
       entity_id: input_select.media_control
       state: 'Off'
@@ -168,9 +169,8 @@
   condition:
     condition: and
     conditions:
-    - condition: numeric_state
-      entity_id: sensor.power_consumption_gamecube
-      below: 3
+    - condition: template
+      value_template: '{{ states.sensor.power_consumption_gamecube.state < 3 }}'
     - condition: template
       value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
   action:
