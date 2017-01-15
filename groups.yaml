@@ -3,9 +3,8 @@
     icon: mdi:sofa
     entities:
     - sensor.media_active_setting
-    - sensor.sab_left
     - sensor.sab_speed
-    - sensor.sab_status
+    - sensor.sab_left_gb
     - group.media_control
     - group.lights_control
 

@@ -14,6 +14,13 @@
   - 'speed'
   - 'queue_remaining'
 
+- platform: template
+  sensors:
+    sab_left_gb:
+      friendly_name: 'SAB Left'
+      unit_of_measurement: 'GB'
+      value_template: '{{ "%0.2f" | format(float(states.sensor.sab_left.state) / 1024) }}'
+
 - platform: command_line
   name: 'Power Consumption Wii U'
   command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
