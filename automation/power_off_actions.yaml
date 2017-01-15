@@ -1,179 +1,127 @@
-- alias: 'Put amp into standby based on media setting.'
+- alias: 'Put amp into standby when not in use.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" == "Off" or "states.input_select.media_control.state" == "GameCube" }}'
   action:
     service: shell_command.oh_standby
 
-- alias: 'Shut amp off when going into standby.'
+- alias: 'Shut amp off when in standby and not in use.'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.power_consumption_linn_majik_dsm
-    below: 26
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
+    platform: template
+    value_template: '{{ "states.sensor.power_consumption_linn_majik_dsm.state" < "26" and ("states.input_select.media_control.state" == "Off" or "states.input_select.media_control.state" == "GameCube") }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_linn_majik_dsm
 
-- alias: 'Shut amp off when already in standby.'
-  trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: template
-      value_template: '{{ states.sensor.power_consumption_linn_majik_dsm.state < 26 }}'
-#    - condition: numeric_state
-#      entity_id: sensor.power_consumption_linn_majik_dsm
-#      below: 26
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
-  action:
-    service: switch.turn_off
-    data:
-      entity_id: switch.power_state_linn_majik_dsm
+#- alias: 'Shut amp off when already in standby.'
+#  trigger:
+#    platform: state
+#    entity_id: input_select.media_control
+#  condition:
+#    condition: or
+#    conditions:
+#    - condition: template
+#      value_template: '{{ states.sensor.power_consumption_linn_majik_dsm.state < 26 }}'
+#    - condition: state
+#      entity_id: input_select.media_control
+#      state: 'Off'
+#    - condition: state
+#      entity_id: input_select.media_control
+#      state: GameCube
+#  action:
+#    service: switch.turn_off
+#    data:
+#      entity_id: switch.power_state_linn_majik_dsm
 
-- alias: 'Switch TV off based on media setting.'
+- alias: 'Switch TV off when not in use.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: Music
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" == "Off" or "states.input_select.media_control.state" == "Music" }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_tv
 
-- alias: 'Shut off subwoofer when going into standby.'
+- alias: 'Shut off subwoofer when in standby.'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.power_consumption_bw_asw10cm
-    below: 3
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: TV
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
+    platform: template
+    value_template: '{{ "states.sensor.power_consumption_bw_asw10cm.state" < "3" and ("states.input_select.media_control.state" == "Off" or "states.input_select.media_control.state" == "TV" or "states.input_select.media_control.state" == "GameCube") }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_bw_asw10cm
 
-- alias: 'Shut off subwoofer when already in standby.'
-  trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: template
-      value_template: '{{ states.sensor.power_consumption_bw_asw10cm.state < 3 }}'
-    - condition: state
-      entity_id: input_select.media_control
-      state: 'Off'
-    - condition: state
-      entity_id: input_select.media_control
-      state: TV
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
-  action:
-    service: switch.turn_off
-    data:
-      entity_id: switch.power_state_bw_asw10cm
+#- alias: 'Shut off subwoofer when already in standby.'
+#  trigger:
+#    platform: state
+#    entity_id: input_select.media_control
+#  condition:
+#    condition: or
+#    conditions:
+#    - condition: template
+#      value_template: '{{ states.sensor.power_consumption_bw_asw10cm.state < 3 }}'
+#    - condition: state
+#      entity_id: input_select.media_control
+#      state: 'Off'
+#    - condition: state
+#      entity_id: input_select.media_control
+#      state: TV
+#    - condition: state
+#      entity_id: input_select.media_control
+#      state: GameCube
+#  action:
+#    service: switch.turn_off
+#    data:
+#      entity_id: switch.power_state_bw_asw10cm
 
-- alias: 'Shut off Wii U when going into standby.'
+- alias: 'Shut Wii U off when in standby.'
   trigger:
-    platform: numeric_state
-    entity_id: sensor.power_consumption_wii_u
-    below: 3
-  condition:
-    condition: template
-    value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
+    platform: template
+    value_template: '{{ "states.sensor.power_consumption_wii_u.state" < "3" and "states.input_select.media_control.state" != "Wii U" }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_wiiu
+      
+#- alias: 'Shut off Wii U when already in standby.'
+#  trigger:
+#    platform: numeric_state
+#    entity_id: input_select.media_control
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: template
+#      value_template: '{{ states.sensor.power_consumption_wii_u.state < 3 }}'
+#    - condition: template
+#      value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
+#  action:
+#    service: switch.turn_off
+#    data:
+#      entity_id: switch.power_state_wiiu
 
-- alias: 'Shut off Wii U when already in standby.'
+- alias: 'Shut off GameCube when in standby.'
   trigger:
-    platform: numeric_state
-    entity_id: input_select.media_control
-  condition:
-    condition: and
-    conditions:
-    - condition: numeric_state
-      entity_id: sensor.power_consumption_wii_u
-      below: 3
-    - condition: template
-      value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
-  action:
-    service: switch.turn_off
-    data:
-      entity_id: switch.power_state_wiiu
-
-- alias: 'Shut off GameCube when going into standby.'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.power_consumption_gamecube
-    below: 3
-  condition:
-    condition: template
-    value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
+    platform: template
+    value_template: '{{ "states.sensor.power_consumption_gamecube.state" < "3" and "states.input_select.media_control.state" != "GameCube" }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_gamecube
 
-- alias: 'Shut off GameCube when already in standby.'
-  trigger:
-    platform: numeric_state
-    entity_id: input_select.media_control
-  condition:
-    condition: and
-    conditions:
-    - condition: template
-      value_template: '{{ states.sensor.power_consumption_gamecube.state < 3 }}'
-    - condition: template
-      value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
-  action:
-    service: switch.turn_off
-    data:
-      entity_id: switch.power_state_gamecube
+#- alias: 'Shut off GameCube when already in standby.'
+#  trigger:
+#    platform: numeric_state
+#    entity_id: input_select.media_control
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: template
+#      value_template: '{{ states.sensor.power_consumption_gamecube.state < 3 }}'
+#    - condition: template
+#      value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
+#  action:
+#    service: switch.turn_off
+#    data:
+#      entity_id: switch.power_state_gamecube
+
