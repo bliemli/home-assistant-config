@@ -1,66 +1,93 @@
-- alias: 'Switch on amp when needed.'
+- alias: 'Switch amp on based on media settings.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.play_music
-    - input_boolean.watch_kodi
-    - input_boolean.play_wiiu
-    - input_boolean.play_nesmini
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.media_control
+      state: Music
+    - condition: state
+      entity_id: input_select.media_control
+      state: Movies
+    - condition: state
+      entity_id: input_select.media_control
+      state: Wii U
+    - condition: state
+      entity_id: input_select.media_control
+      state: NES mini
   action:
     service: switch.turn_on
     data:
       entity_id: switch.power_state_linn_majik_dsm
 
-- alias: 'Switch on TV when needed.'
+- alias: 'Switch TV on based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.watch_kodi
-    - input_boolean.watch_tv
-    - input_boolean.play_wiiu
-    - input_boolean.play_gamecube
-    - input_boolean.play_nesmini
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.media_control
+      state: Movies
+    - condition: state
+      entity_id: input_select.media_control
+      state: TV
+    - condition: state
+      entity_id: input_select.media_control
+      state: Wii U
+    - condition: state
+      entity_id: input_select.media_control
+      state: GameCube
+    - condition: state
+      entity_id: input_select.media_control
+      state: NES mini
   action:
   - service: switch.turn_on
     data:
       entity_id: switch.power_state_tv
 
-- alias: 'Switch on subwoofer when needed.'
+- alias: 'Switch subwoofer on based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.play_music
-    - input_boolean.watch_kodi
-    - input_boolean.play_wiiu
-    - input_boolean.play_nesmini
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+  conditions:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.media_control
+      state: Music
+    - condition: state
+      entity_id: input_select.media_control
+      state: Movies
+    - condition: state
+      entity_id: input_select.media_control
+      state: Wii U
+    - condition: state
+      entity_id: input_select.media_control
+      state: NES mini
   action:
     service: switch.turn_on
     data:
       entity_id: switch.power_state_bw_asw10cm
 
-- alias: 'Switch on Wii U when needed.'
+- alias: 'Switch Wii U on based on media settings.'
   trigger:
     platform: state
-    entity_id: input_boolean.play_wiiu
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: Wii U
   action:
     service: switch.turn_on
     data:
       entity_id: switch.power_state_wiiu
 
-- alias: 'Switch on Gamecube when needed.'
+- alias: 'Switch Gamecube on based on media settings.'
   trigger:
     platform: state
-    entity_id: input_boolean.play_gamecube
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: GameCube
   action:
     service: switch.turn_on
     data:

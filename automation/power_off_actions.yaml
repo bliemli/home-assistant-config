@@ -1,110 +1,94 @@
-- alias: 'Set amp into standby when not in use.'
+- alias: 'Put amp into standby based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.play_music
-    - input_boolean.watch_kodi
-    - input_boolean.play_wiiu
-    - input_boolean.play_nesmini
-    from: 'on'
-    to: 'off'
+    entity_id: input_select.media_control
   condition:
-    condition: and
+    condition: or
     conditions:
     - condition: state
-      entity_id: input_boolean.play_music
-      state: 'off'
+      entity_id: input_select.media_control
+      state: 'Off'
     - condition: state
-      entity_id: input_boolean.watch_kodi
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_wiiu
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_nesmini
-      state: 'off'
+      entity_id: input_select.media_control
+      state: GameCube
   action:
     service: shell_command.oh_standby
 
-- alias: 'Shut off amp when in standby.'
+- alias: 'Shut amp off when going into standby.'
   trigger:
     platform: numeric_state
     entity_id: sensor.power_consumption_linn_majik_dsm
     below: 26
   condition:
-    condition: and
+    condition: or
     conditions:
     - condition: state
-      entity_id: input_boolean.play_music
-      state: 'off'
+      entity_id: input_select.media_control
+      state: 'Off'
     - condition: state
-      entity_id: input_boolean.watch_kodi
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_wiiu
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_nesmini
-      state: 'off'
+      entity_id: input_select.media_control
+      state: GameCube
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_linn_majik_dsm
 
-- alias: 'Switch TV off if not in use.'
+- alias: 'Shut amp off when already in standby.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.watch_kodi
-    - input_boolean.watch_tv
-    - input_boolean.play_wiiu
-    - input_boolean.play_gamecube
-    - input_boolean.play_nesmini
-    from: 'on'
-    to: 'off'
+    entity_id: input_select.media_control
   condition:
-    condition: and
+    condition: or
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.power_consumption_linn_majik_dsm
+      below: 26
+    - condition: state
+      entity_id: input_select.media_control
+      state: 'Off'
+    - condition: state
+      entity_id: input_select.media_control
+      state: GameCube
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.power_state_linn_majik_dsm
+
+- alias: 'Switch TV off based on media setting.'
+  trigger:
+    platform: state
+    entity_id: input_select.media_control
+  condition:
+    condition: or
     conditions:
     - condition: state
-      entity_id: input_boolean.watch_kodi
-      state: 'off'
+      entity_id: input_select.media_control
+      state: 'Off'
     - condition: state
-      entity_id: input_boolean.watch_tv
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_wiiu
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_gamecube
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_nesmini
-      state: 'off'
+      entity_id: input_select.media_control
+      state: Music
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_tv
 
-- alias: 'Shut off subwoofer when in standby.'
+- alias: 'Shut off subwoofer when going into standby.'
   trigger:
     platform: numeric_state
     entity_id: sensor.power_consumption_bw_asw10cm
     below: 3
   condition:
-    condition: and
+    condition: or
     conditions:
     - condition: state
-      entity_id: input_boolean.play_music
-      state: 'off'
+      entity_id: input_select.media_control
+      state: 'Off'
     - condition: state
-      entity_id: input_boolean.watch_kodi
-      state: 'off'
+      entity_id: input_select.media_control
+      state: TV
     - condition: state
-      entity_id: input_boolean.play_wiiu
-      state: 'off'
-    - condition: state
-      entity_id: input_boolean.play_nesmini
-      state: 'off'
+      entity_id: input_select.media_control
+      state: GameCube
   action:
     service: switch.turn_off
     data:
@@ -113,47 +97,83 @@
 - alias: 'Shut off subwoofer when already in standby.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.play_music
-    - input_boolean.watch_kodi
-    - input_boolean.play_wiiu
-    - input_boolean.play_nesmini
-    from: 'on'
-    to: 'off'
+    entity_id: input_select.media_control
   condition:
-    condition: numeric_state
-    entity_id: sensor.power_consumption_bw_asw10cm
-    below: 3
+    condition: or
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.power_consumption_bw_asw10cm
+      below: 3
+    - condition: state
+      entity_id: input_select.media_control
+      state: 'Off'
+    - condition: state
+      entity_id: input_select.media_control
+      state: TV
+    - condition: state
+      entity_id: input_select.media_control
+      state: GameCube
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_bw_asw10cm
 
-- alias: 'Shut off Wii U when in standby.'
+- alias: 'Shut off Wii U when going into standby.'
   trigger:
     platform: numeric_state
     entity_id: sensor.power_consumption_wii_u
     below: 3
   condition:
-    condition: state
-    entity_id: input_boolean.play_wiiu
-    state: 'off'
+    condition: template
+    value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_wiiu
 
-- alias: 'Shut off Gamecube when in standby.'
+- alias: 'Shut off Wii U when already in standby.'
+  trigger:
+    platform: numeric_state
+    entity_id: input_select.media_control
+  condition:
+    condition: and
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.power_consumption_wii_u
+      below: 3
+    - condition: template
+      value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.power_state_wiiu
+
+- alias: 'Shut off GameCube when going into standby.'
   trigger:
     platform: numeric_state
     entity_id: sensor.power_consumption_gamecube
     below: 3
   condition:
-    condition: state
-    entity_id: input_boolean.play_gamecube
-    state: 'off'
+    condition: template
+    value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_gamecube
 
+- alias: 'Shut off GameCube when already in standby.'
+  trigger:
+    platform: numeric_state
+    entity_id: input_select.media_control
+  condition:
+    condition: and
+    conditions:
+    - condition: numeric_state
+      entity_id: sensor.power_consumption_gamecube
+      below: 3
+    - condition: template
+      value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.power_state_gamecube

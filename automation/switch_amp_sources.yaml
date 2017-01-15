@@ -6,12 +6,11 @@
   action:
     service: shell_command.oh_phono
 
-- alias: 'Switch source to Kodi when activated.'
+- alias: 'Switch source to Kodi based on media setting.'
   trigger:
     platform: state
-    entity_id: input_boolean.watch_kodi
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: Movies
   action:
   - service: shell_command.oh_kodi
   - service: shell_command.oh_volume40
@@ -22,9 +21,8 @@
 - alias: 'Switch source to Wii U when activated.'
   trigger:
     platform: state
-    entity_id: input_boolean.play_wiiu
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: Wii U
   action:
   - service: shell_command.oh_wiiu
   - delay: 00:00:30
@@ -33,9 +31,8 @@
 - alias: 'Switch source to NES mini when activated.'
   trigger:
     platform: state
-    entity_id: input_boolean.play_nesmini
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: NES mini
   action:
   - service: shell_command.oh_nesmini
   - delay: 00:00:30

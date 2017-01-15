@@ -1,28 +1,30 @@
-- alias: 'Switch source to TV when needed.'
+- alias: 'Switch source to TV based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.watch_tv
-#    from: 'off'
-    state: 'on'
-  condition:
-    condition: template
-    value_template: '{{ states.media_player.philips_tv.attributes.source != "Watch TV" }}'
+    entity_id: input_select.media_control
+    state: TV
   action:
     service: media_player.select_source
     data:
       entity_id: media_player.philips_tv
       source: "Watch TV"
 
-- alias: 'Switch source to amp when needed.'
+- alias: 'Switch source to amp based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.watch_kodi
-    - input_boolean.play_wiiu
-    - input_boolean.play_nesmini
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.media_control
+      state: Movies
+    - condition: state
+      entity_id: input_select.media_control
+      state: Wii U
+    - condition: state
+      entity_id: input_select.media_control
+      state: NES mini
   action:
     service: media_player.select_source
     data:
@@ -31,13 +33,11 @@
 #  - delay: 00:01:00
 #  - service: shell_command.tv_linn_majik
 
-- alias: 'Switch source to Gamecube when needed.'
+- alias: 'Switch source to GameCube based on media setting.'
   trigger:
     platform: state
-    entity_id:
-    - input_boolean.play_gamecube
-    from: 'off'
-    to: 'on'
+    entity_id: input_select.media_control
+    to: GameCube
   action:
     service: media_player.select_source
     data:
