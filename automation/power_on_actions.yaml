@@ -1,22 +1,7 @@
 - alias: 'Switch amp on based on media settings.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: Music
-    - condition: state
-      entity_id: input_select.media_control
-      state: Movies
-    - condition: state
-      entity_id: input_select.media_control
-      state: Wii U
-    - condition: state
-      entity_id: input_select.media_control
-      state: NES mini
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" != "Off" and "states.input_select.media_control.state" != "GameCube" }}'
   action:
     service: switch.turn_on
     data:
@@ -24,26 +9,8 @@
 
 - alias: 'Switch TV on based on media setting.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: Movies
-    - condition: state
-      entity_id: input_select.media_control
-      state: TV
-    - condition: state
-      entity_id: input_select.media_control
-      state: Wii U
-    - condition: state
-      entity_id: input_select.media_control
-      state: GameCube
-    - condition: state
-      entity_id: input_select.media_control
-      state: NES mini
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" != "Off" and "states.input_select.media_control.state" != "Music" }}'
   action:
   - service: switch.turn_on
     data:
@@ -51,23 +18,8 @@
 
 - alias: 'Switch subwoofer on based on media setting.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-  conditions:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_select.media_control
-      state: Music
-    - condition: state
-      entity_id: input_select.media_control
-      state: Movies
-    - condition: state
-      entity_id: input_select.media_control
-      state: Wii U
-    - condition: state
-      entity_id: input_select.media_control
-      state: NES mini
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" == "Music" or "states.input_select.media_control.state" == "Movies" or "states.input_select.media_control.state" == "Wii U" or "states.input_select.media_control.state" == "NES mini" }}'
   action:
     service: switch.turn_on
     data:
@@ -75,19 +27,17 @@
 
 - alias: 'Switch Wii U on based on media settings.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-    to: Wii U
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" == "Wii U" }}'
   action:
     service: switch.turn_on
     data:
       entity_id: switch.power_state_wiiu
 
-- alias: 'Switch Gamecube on based on media settings.'
+- alias: 'Switch GameCube on based on media settings.'
   trigger:
-    platform: state
-    entity_id: input_select.media_control
-    to: GameCube
+    platform: template
+    value_template: '{{ "states.input_select.media_control.state" == "GameCube" }}'
   action:
     service: switch.turn_on
     data:
