@@ -11,7 +11,7 @@
       friendly_name: Wii U
       icon: mdi:wiiu
     scene.gamecube:
-      friendly_name: Gamecube
+      friendly_name: GameCube
       icon: mdi:cube
     scene.nes_mini:
       friendly_name: NES mini

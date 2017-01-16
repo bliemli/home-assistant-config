@@ -17,7 +17,7 @@
 - name: gamecube
   entities:
     input_select.media_control:
-      option: Gamecube
+      option: GameCube
 - name: nes_mini
   entities:
     input_select.media_control:
