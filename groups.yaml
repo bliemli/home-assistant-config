@@ -4,11 +4,6 @@
     entities:
     - sensor.sab_speed
     - sensor.sab_left_gb
-    - sensor.power_consumption_linn_majik_dsm
-    - sensor.power_consumption_bw_asw10cm
-    - sensor.power_consumption_phono
-    - sensor.power_consumption_wii_u
-    - sensor.power_consumption_gamecube
     - group.actions_control
     - group.lights_control
 
