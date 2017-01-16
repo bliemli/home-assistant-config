@@ -20,13 +20,6 @@
     - group.power_control
     - group.lamps_control
 
-  sensors:
-    name: Sensors
-    icon: mdi:gauge
-    view: yes
-    entities:
-    - group.power_consumption
-
   actions_control:
     name: Actions
     entities:
