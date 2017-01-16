@@ -48,23 +48,3 @@
   value_template: '{{ value_json.data.watt[5] }}'
   unit_of_measurement: 'W'
 
-- platform: statistics
-  entity_id: sensor.power_consumption_bw_asw10cm
-  name: "Power Consumption Statistics B&W ASW10CM"
-
-- platform: statistics
-  entity_id: sensor.power_consumption_gamecube
-  name: "Power Consumption Statistics GameCube"
-
-- platform: statistics
-  entity_id: sensor.power_consumption_linn_majik_dsm
-  name: "Power Consumption Statistics Linn Majik DSM"
-
-- platform: statistics
-  entity_id: sensor.power_consumption_phono
-  name: "Power Consumption Statistics Phono"
-
-- platform: statistics
-  entity_id: sensor.power_consumption_wii_u
-  name: "Power Consumption Statistics Wii U"
-
