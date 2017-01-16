@@ -1,7 +1,7 @@
 - alias: 'Switch amp on based on media settings.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" != "Off" and "states.input_select.media_control.state" != "GameCube" }}'
+    value_template: '{{ "states.input_select.media_control.state" == "Music" or "states.input_select.media_control.state" == "Movies" or "states.input_select.media_control.state" == "Wii U" or "states.input_select.media_control.state" == "NES mini" }}'
   action:
     service: switch.turn_on
     data:
