@@ -50,9 +50,6 @@
       friendly_name: 'Signal Lamp'
     light.office_lamp:
       friendly_name: 'Office Lamp'
-    light.mood_stripe:
-      hidden: true
-      friendly_name: 'Mood Stripe'
 
     switch.power_state_wiiu:
       icon: mdi:power
@@ -76,17 +73,17 @@
 
     sensor.power_consumption_linn_majik_dsm:
       icon: mdi:power-socket
-      friendly_name: Linn Majik DSM
+      friendly_name: Energy use amp
     sensor.power_consumption_bw_asw10cm:
       icon: mdi:power-socket
-      friendly_name: B&W ASW10CM
+      friendly_name: Energy use subwoofer
     sensor.power_consumption_phono:
       icon: mdi:power-socket
-      friendly_name: Phono
+      friendly_name: Energy use phono
     sensor.power_consumption_wii_u:
       icon: mdi:power-socket
-      friendly_name: 'Wii U'
+      friendly_name: Energy use Wii U
     sensor.power_consumption_gamecube:
       icon: mdi:power-socket
-      friendly_name: GameCube
+      friendly_name: Energy use GameCube
 
