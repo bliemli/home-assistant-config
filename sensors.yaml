@@ -19,7 +19,7 @@
     sab_left_gb:
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
-      value_template: '{{ "%0.2f" | format(float(states.sensor.sab_left.state) / 1024) }}'
+      value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
 
 - platform: command_line
   name: 'Power Consumption Wii U'
