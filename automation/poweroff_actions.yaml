@@ -14,26 +14,6 @@
     data:
       entity_id: switch.power_state_linn_majik_dsm
 
-#- alias: 'Shut amp off when already in standby.'
-#  trigger:
-#    platform: state
-#    entity_id: input_select.media_control
-#  condition:
-#    condition: or
-#    conditions:
-#    - condition: template
-#      value_template: '{{ states.sensor.power_consumption_linn_majik_dsm.state < 26 }}'
-#    - condition: state
-#      entity_id: input_select.media_control
-#      state: 'Off'
-#    - condition: state
-#      entity_id: input_select.media_control
-#      state: GameCube
-#  action:
-#    service: switch.turn_off
-#    data:
-#      entity_id: switch.power_state_linn_majik_dsm
-
 - alias: 'Switch TV off when not in use.'
   trigger:
     platform: template
@@ -46,82 +26,27 @@
 - alias: 'Shut off subwoofer when in standby.'
   trigger:
     platform: template
-    value_template: '{{ "states.sensor.power_consumption_bw_asw10cm.state" < "3" and ("states.input_select.media_control.state" == "Off" or "states.input_select.media_control.state" == "TV" or "states.input_select.media_control.state" == "GameCube") }}'
+    value_template: '{{ float(states.sensor.power_consumption_bw_asw10cm.state) < 3 and (is_state("input_select.media_control", "Off") or is_state("input_select.media_control", "TV") or is_state("input_select.media_control", "NGC")) }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_bw_asw10cm
 
-#- alias: 'Shut off subwoofer when already in standby.'
-#  trigger:
-#    platform: state
-#    entity_id: input_select.media_control
-#  condition:
-#    condition: or
-#    conditions:
-#    - condition: template
-#      value_template: '{{ states.sensor.power_consumption_bw_asw10cm.state < 3 }}'
-#    - condition: state
-#      entity_id: input_select.media_control
-#      state: 'Off'
-#    - condition: state
-#      entity_id: input_select.media_control
-#      state: TV
-#    - condition: state
-#      entity_id: input_select.media_control
-#      state: GameCube
-#  action:
-#    service: switch.turn_off
-#    data:
-#      entity_id: switch.power_state_bw_asw10cm
-
 - alias: 'Shut Wii U off when in standby.'
   trigger:
     platform: template
-    value_template: '{{ "states.sensor.power_consumption_wii_u.state" < "3" and "states.input_select.media_control.state" != "Wii U" }}'
+    value_template: '{{ float(states.sensor.power_consumption_wii_u.state) < 3 and not is_state("input_select.media_control", "Wii U") }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_wiiu
       
-#- alias: 'Shut off Wii U when already in standby.'
-#  trigger:
-#    platform: numeric_state
-#    entity_id: input_select.media_control
-#  condition:
-#    condition: and
-#    conditions:
-#    - condition: template
-#      value_template: '{{ states.sensor.power_consumption_wii_u.state < 3 }}'
-#    - condition: template
-#      value_template: "{{ not is_state('input_select.media_control', 'Wii U') }}"
-#  action:
-#    service: switch.turn_off
-#    data:
-#      entity_id: switch.power_state_wiiu
-
 - alias: 'Shut off GameCube when in standby.'
   trigger:
     platform: template
-    value_template: '{{ "states.sensor.power_consumption_gamecube.state" < "3" and "states.input_select.media_control.state" != "GameCube" }}'
+    value_template: '{{ float(states.sensor.power_consumption_gamecube.state) < 3 and not is_state("input_select.media_control", "NGC") }}'
   action:
     service: switch.turn_off
     data:
       entity_id: switch.power_state_gamecube
-
-#- alias: 'Shut off GameCube when already in standby.'
-#  trigger:
-#    platform: numeric_state
-#    entity_id: input_select.media_control
-#  condition:
-#    condition: and
-#    conditions:
-#    - condition: template
-#      value_template: '{{ states.sensor.power_consumption_gamecube.state < 3 }}'
-#    - condition: template
-#      value_template: "{{ not is_state('input_select.media_control', 'GameCube') }}"
-#  action:
-#    service: switch.turn_off
-#    data:
-#      entity_id: switch.power_state_gamecube
 
