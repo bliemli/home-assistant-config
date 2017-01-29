@@ -25,7 +25,7 @@
 - name: media_off
   entities:
     input_select.media_control:
-      option: Off
+      option: 'Off'
 
 - name: standard
   entities:
