@@ -39,7 +39,3 @@ Another possibility is to automatically switch the source of the amplifier to 'P
 
 ![Screenshot 1](images/ha01.png)
 
-![Screenshot 2](images/ha02.png)
-
-![Screenshot 3](images/ha03.png)
-
