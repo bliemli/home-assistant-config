@@ -17,11 +17,11 @@
 - name: gamecube
   entities:
     input_select.media_control:
-      option: GameCube
+      option: NGC
 - name: nes_mini
   entities:
     input_select.media_control:
-      option: NES mini
+      option: NES
 - name: media_off
   entities:
     input_select.media_control:

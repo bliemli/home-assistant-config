@@ -1,7 +1,7 @@
 - alias: 'Switch amp on based on media settings.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" == "Music" or "states.input_select.media_control.state" == "Movies" or "states.input_select.media_control.state" == "Wii U" or "states.input_select.media_control.state" == "NES mini" }}'
+    value_template: '{{ is_state("input_select.media_control", "Music") or is_state("input_select.media_control", "Movies") or is_state("input_select.media_control", "Wii U") or is_state("input_select.media_control", "NES") }}'
   action:
     service: switch.turn_on
     data:
@@ -10,7 +10,7 @@
 - alias: 'Switch TV on based on media setting.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" != "Off" and "states.input_select.media_control.state" != "Music" }}'
+    value_template: '{{ not is_state("input_select.media_control", "Off") and not is_state("input_select.media_control", "Music") }}'
   action:
   - service: switch.turn_on
     data:
@@ -19,7 +19,7 @@
 - alias: 'Switch subwoofer on based on media setting.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" == "Music" or "states.input_select.media_control.state" == "Movies" or "states.input_select.media_control.state" == "Wii U" or "states.input_select.media_control.state" == "NES mini" }}'
+    value_template: '{{ is_state("input_select.media_control", "Music") or is_state("input_select.media_control", "Movies") or is_state("input_select.media_control", "Wii U") or is_state("input_select.media_control", "NES") }}'
   action:
     service: switch.turn_on
     data:
@@ -28,7 +28,7 @@
 - alias: 'Switch Wii U on based on media settings.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" == "Wii U" }}'
+    value_template: '{{ is_state("input_select.media_control", "Wii U") }}'
   action:
     service: switch.turn_on
     data:
@@ -37,7 +37,7 @@
 - alias: 'Switch GameCube on based on media settings.'
   trigger:
     platform: template
-    value_template: '{{ "states.input_select.media_control.state" == "GameCube" }}'
+    value_template: '{{ is_state("input_select.media_control", "NGC") }}'
   action:
     service: switch.turn_on
     data:
