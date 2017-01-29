@@ -41,9 +41,6 @@ media_player:
 - platform: kodi
   host: !secret kodi_host
   name: Kodi
-#- platform: philips_js
-#  host: !secret philips_tv_host
-#  name: Philips TV
 
 notify:
 - platform: pushover
