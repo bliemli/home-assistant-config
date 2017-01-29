@@ -19,6 +19,11 @@ frontend:
 #  ssl_certificate: !secret ssl_certificate
 #  ssl_key: !secret ssl_key
 
+recorder:
+  purge_days: 30
+
+history:
+
 updater:
   reporting: no
 
