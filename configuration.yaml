@@ -57,4 +57,5 @@ shell_command: !include shell_commands.yaml
 
 switch: !include switches.yaml
 sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
 

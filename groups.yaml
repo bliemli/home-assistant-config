@@ -5,6 +5,7 @@
     - sensor.media_active_setting
     - sensor.sab_speed
     - sensor.sab_left_gb
+    - binary_sensor.power_status
     - group.media_control
     - group.lights_control
 
