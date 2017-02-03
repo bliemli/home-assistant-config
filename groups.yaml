@@ -7,6 +7,7 @@
     - sensor.sab_left_gb
     - group.mediacontrol
     - group.lightscontrol
+    - binary_sensor.power_status
 
   switches:
     name: Switches

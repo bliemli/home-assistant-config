@@ -2,7 +2,7 @@
   sensors:
     media_active_setting:
       value_template: '{{ states.input_select.media_control.state }}'
-      friendly_name: Media setting
+      friendly_name: 'Media Setting'
       entity_id: input_select.media_control
 
 - platform: sabnzbd
