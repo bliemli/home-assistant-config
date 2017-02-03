@@ -1,0 +1,84 @@
+- alias: 'Switch all mediacontrols off except Music'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_music
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_movies
+      entity_id: input_boolean.mediacontrol_tv
+      entity_id: input_boolean.mediacontrol_wiiu
+      entity_id: input_boolean.mediacontrol_gamecube
+      entity_id: input_boolean.mediacontrol_nesmini
+
+- alias: 'Switch all mediacontrols off except Movies'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_movies
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_music
+      entity_id: input_boolean.mediacontrol_tv
+      entity_id: input_boolean.mediacontrol_wiiu
+      entity_id: input_boolean.mediacontrol_gamecube
+      entity_id: input_boolean.mediacontrol_nesmini
+
+- alias: 'Switch all mediacontrols off except TV'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_tv
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_music
+      entity_id: input_boolean.mediacontrol_movies
+      entity_id: input_boolean.mediacontrol_wiiu
+      entity_id: input_boolean.mediacontrol_gamecube
+      entity_id: input_boolean.mediacontrol_nesmini
+
+- alias: 'Switch all mediacontrols off except Wii U'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_wiiu
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_music
+      entity_id: input_boolean.mediacontrol_movies
+      entity_id: input_boolean.mediacontrol_tv
+      entity_id: input_boolean.mediacontrol_gamecube
+      entity_id: input_boolean.mediacontrol_nesmini
+
+- alias: 'Switch all mediacontrols off except GameCube'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_gamecube
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_music
+      entity_id: input_boolean.mediacontrol_movies
+      entity_id: input_boolean.mediacontrol_tv
+      entity_id: input_boolean.mediacontrol_wiiu
+      entity_id: input_boolean.mediacontrol_nesmini
+
+- alias: 'Switch all mediacontrols off except NES mini'
+  trigger:
+    platform: state
+    entity_id: input_boolean.mediacontrol_nesmini
+    to: 'on'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.mediacontrol_music
+      entity_id: input_boolean.mediacontrol_movies
+      entity_id: input_boolean.mediacontrol_tv
+      entity_id: input_boolean.mediacontrol_wiiu
+      entity_id: input_boolean.mediacontrol_gamecube
+

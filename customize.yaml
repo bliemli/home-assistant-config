@@ -1,25 +1,3 @@
-    scene.music:
-      friendly_name: Music
-      icon: mdi:speaker
-    scene.movies:
-      friendly_name: Movies
-      icon: mdi:kodi
-    scene.tv:
-      friendly_name: TV
-      icon: mdi:television
-    scene.wii_u:
-      friendly_name: Wii U
-      icon: mdi:wiiu
-    scene.gamecube:
-      friendly_name: GameCube
-      icon: mdi:cube
-    scene.nes_mini:
-      friendly_name: NES mini
-      icon: mdi:gamepad-variant
-    scene.media_off:
-      friendly_name: All media off
-      icon: mdi:power-plug-off
-
     scene.standard:
       icon: mdi:brightness-7
       friendly_name: Standard
