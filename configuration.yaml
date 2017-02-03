@@ -32,7 +32,6 @@ sun:
 
 light:
   platform: hue
-  host: !secret hue_host
 
 logger:
   default: error
