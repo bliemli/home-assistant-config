@@ -51,7 +51,7 @@ group: !include groups.yaml
 scene: !include scenes.yaml
 
 automation: !include_dir_merge_list automation
-input_booleans: !include input_booleans.yaml
+input_boolean: !include input_booleans.yaml
 shell_command: !include shell_commands.yaml
 
 switch: !include switches.yaml
