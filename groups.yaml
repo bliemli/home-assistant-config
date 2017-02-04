@@ -18,6 +18,7 @@
 
   mediacontrol:
     name: Media
+    control: hidden
     entities:
     - input_boolean.mediacontrol_music
     - input_boolean.mediacontrol_movies
