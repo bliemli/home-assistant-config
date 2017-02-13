@@ -13,6 +13,10 @@
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
+    power_status:
+      friendly_name: 'Power Status'
+      value_template: '{% if is_state("group.powercontrol", "on") %}on{% else %}off{% endif %}'
+      icon_template: '{% if is_state("group.powercontrol", "on") %}mdi:power-plug{% else %}mdi:power-plug-off{% endif %}'
 
 - platform: command_line
   name: 'Power Consumption Wii U'
