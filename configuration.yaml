@@ -51,6 +51,7 @@ binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 
+alert: !include alerts.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 

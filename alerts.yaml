@@ -1,0 +1,10 @@
+  inadvertent_power_consumption:
+    name: Inadvertent power consumption
+    entity_id: binary_sensor.inadvertent_power_consumption
+    repeat:
+    - 35
+    - 5
+    - 60
+    skip_first: true
+    notifiers:
+    - pushover
