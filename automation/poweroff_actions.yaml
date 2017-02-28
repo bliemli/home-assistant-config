@@ -8,7 +8,7 @@
 - alias: 'Shut amp off when in standby and not in use.'
   trigger:
     platform: template
-    value_template: '{{ float(states.sensor.power_consumption_linn_majik_dsm.state) < 26 and (is_state("group.mediacontrol", "off") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_tv", "on")) }}'
+    value_template: '{{ float(states.sensor.power_consumption_linn_majik_dsm.state) < 24 and (is_state("group.mediacontrol", "off") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_tv", "on")) }}'
   action:
     service: switch.turn_off
     data:
