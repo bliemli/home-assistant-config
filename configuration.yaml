@@ -34,7 +34,10 @@ light:
   platform: hue
 
 logger:
-  default: error
+  default: info
+  logs:
+    homeassistant.components.sensor: error
+    homeassistant.components.switch: error
 
 media_player:
 - platform: kodi
