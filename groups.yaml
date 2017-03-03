@@ -29,11 +29,11 @@
   lightscontrol:
     name: Lighting
     entities:
-    - scene.standard
-    - scene.relax
-    - scene.nightlight
-    - scene.energize
-    - scene.movie
+    - scene.snuggery_standard
+    - scene.snuggery_relax
+    - scene.snuggery_nightlight
+    - scene.snuggery_energize
+    - scene.snuggery_movie
     - scene.snuggery_off
 
   powercontrol:

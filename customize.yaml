@@ -1,16 +1,16 @@
-    scene.standard:
+    scene.snuggery_standard:
       icon: mdi:brightness-7
       friendly_name: Standard
-    scene.relax:
+    scene.snuggery_relax:
       icon: mdi:brightness-4
       friendly_name: Relax
-    scene.nightlight:
+    scene.snuggery_nightlight:
       icon: mdi:brightness-2
       friendly_name: Nightlight
-    scene.energize:
+    scene.snuggery_energize:
       icon: mdi:brightness-5
       friendly_name: Energize
-    scene.movie:
+    scene.snuggery_movie:
       icon: mdi:brightness-3
       friendly_name: Movie
     scene.snuggery_off:
