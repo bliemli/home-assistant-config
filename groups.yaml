@@ -6,6 +6,7 @@
     - sensor.sab_left_gb
     - group.mediacenter
     - group.snuggery
+    - group.office
 
   switches:
     name: Switches
@@ -34,6 +35,11 @@
     - scene.snuggery_energize
     - scene.snuggery_movie
     - scene.snuggery_off
+
+  office:
+    entities:
+    - scene.office_tropical
+    - scene.office_nightlight
 
   powercontrol:
     name: Power

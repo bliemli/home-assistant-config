@@ -17,6 +17,13 @@
       icon: mdi:brightness-1
       friendly_name: All lights off
 
+    scene.office_tropical:
+      icon: mdi:beach
+      friendly_name: Nightlight
+    scene.office_nightlight:
+      icon: mdi:brightness-2
+      friendly_name: Nightlight
+
     light.sphere_lamp_right:
       icon: mdi:blur-radial
       friendly_name: 'Sphere Lamp right'

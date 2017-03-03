@@ -115,3 +115,21 @@
       state: off
       transition: 10
 
+- name: office_tropical
+  entities:
+    light.office_lamp:
+      state: on
+      xy_color: [0.5993, 0.3765]
+      color_temp: 153
+      brightness: 123
+      transition: 10
+
+- name: office_nightlight
+  entities:
+    light.office_lamp:
+      state: on
+      xy_color: [0.561, 0.4042]
+      color_temp: 153
+      brightness: 1
+      transition: 10
+
