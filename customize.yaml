@@ -34,6 +34,7 @@
       icon: mdi:rename-box
       friendly_name: 'Signal Lamp'
     light.office_lamp:
+      icon: mdi:spotlight-beam
       friendly_name: 'Office Lamp'
     light.mood_stripe:
       hidden: true
