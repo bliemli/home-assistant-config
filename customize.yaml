@@ -28,6 +28,8 @@
       friendly_name: 'Signal Lamp'
     light.office_lamp:
       friendly_name: 'Office Lamp'
+    light.mood_stripe:
+      hidden: true
 
     switch.power_state_wiiu:
       icon: mdi:power

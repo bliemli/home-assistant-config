@@ -4,8 +4,8 @@
     entities:
     - sensor.sab_speed
     - sensor.sab_left_gb
-    - group.mediacontrol
-    - group.lightscontrol
+    - group.mediacenter
+    - group.snuggery
 
   switches:
     name: Switches
@@ -13,9 +13,9 @@
     view: yes
     entities:
     - group.powercontrol
-    - group.lampscontrol
+    - group.all_lights
 
-  mediacontrol:
+  mediacenter:
     name: Media
     control: hidden
     entities:
@@ -26,8 +26,7 @@
     - input_boolean.mediacontrol_gamecube
     - input_boolean.mediacontrol_nesmini
 
-  lightscontrol:
-    name: Lighting
+  snuggery:
     entities:
     - scene.snuggery_standard
     - scene.snuggery_relax
@@ -45,18 +44,4 @@
     - switch.power_state_bw_asw10cm
     - switch.power_state_wiiu
     - switch.power_state_gamecube
-
-  lampscontrol:
-    name: Lamps
-    entities:
-    - light.sphere_lamp_right
-    - light.sphere_lamp_left
-    - light.signal_lamp
-    - light.office_lamp
-
-  snuggery:
-    entities:
-    - light.sphere_lamp_left
-    - light.sphere_lamp_right
-    - light.signal_lamp
 
