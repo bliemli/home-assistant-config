@@ -19,7 +19,7 @@
 
     scene.office_tropical:
       icon: mdi:beach
-      friendly_name: Nightlight
+      friendly_name: Tropical
     scene.office_nightlight:
       icon: mdi:brightness-2
       friendly_name: Nightlight

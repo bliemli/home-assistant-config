@@ -17,7 +17,7 @@
     - group.all_lights
 
   mediacenter:
-    name: Media
+    name: Mediacenter
     control: hidden
     entities:
     - input_boolean.mediacontrol_music
@@ -28,6 +28,7 @@
     - input_boolean.mediacontrol_nesmini
 
   snuggery:
+    name: Snuggery
     entities:
     - scene.snuggery_standard
     - scene.snuggery_relax
@@ -37,6 +38,7 @@
     - scene.snuggery_off
 
   office:
+    name: Office
     entities:
     - scene.office_tropical
     - scene.office_nightlight
