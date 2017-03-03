@@ -39,6 +39,13 @@
     light.mood_stripe:
       hidden: true
 
+    light.bedroom:
+      hidden: true
+    light.office:
+      hidden: true
+    light.snuggery:
+      hidden: true
+
     switch.power_state_wiiu:
       icon: mdi:power
       friendly_name: Wii U
@@ -74,4 +81,8 @@
     sensor.power_consumption_gamecube:
       icon: mdi:power-socket
       friendly_name: Energy use GameCube
+
+    group.all_lights:
+      friendly_name: Lights
+      hidden: false
 
