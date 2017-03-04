@@ -120,7 +120,7 @@
     light.office_lamp:
       state: on
       xy_color: [0.5993, 0.3765]
-      color_temp: 153
+      color_temp: 154
       brightness: 123
       transition: 10
 
@@ -129,7 +129,7 @@
     light.office_lamp:
       state: on
       xy_color: [0.561, 0.4042]
-      color_temp: 153
+      color_temp: 467
       brightness: 1
       transition: 10
 
