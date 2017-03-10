@@ -36,6 +36,8 @@ light:
 logger:
   default: info
   logs:
+    homeassistant.core: error
+    homeassistant.components.http: error
     homeassistant.components.sensor: error
     homeassistant.components.switch: error
 
