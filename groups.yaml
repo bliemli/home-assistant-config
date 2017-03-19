@@ -4,6 +4,7 @@
     entities:
     - sensor.sab_speed
     - sensor.sab_left_gb
+    - updater.updater
     - group.mediacenter
     - group.snuggery
     - group.office
