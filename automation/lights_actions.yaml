@@ -1,0 +1,9 @@
+- alias: 'Turn signal lamp off when disturbing.'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_tv", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.signal_lamp
+
