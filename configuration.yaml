@@ -7,13 +7,6 @@ homeassistant:
   time_zone: !secret time_zone
   customize: !include customize.yaml
 
-zone:
-  name: Home
-  latitude: !secret latitude
-  longitude: !secret longitude
-  radius: 20
-  icon: mdi:home
-
 frontend:
 #http:
 #  ssl_certificate: !secret ssl_certificate

@@ -30,8 +30,6 @@
     data:
       entity_id: media_player.philips_tv
       source: "Linn Majik"
-#  - delay: 00:01:00
-#  - service: shell_command.tv_linn_majik
 
 - alias: 'Switch source to GameCube based on media setting.'
   trigger:
@@ -43,7 +41,4 @@
     data:
       entity_id: media_player.philips_tv
       source: "GameCube"
-#  - service: shell_command.tv_gamecube
-#  - delay: 00:01:00
-#  - service: shell_command.tv_gamecube
 
