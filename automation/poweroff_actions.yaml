@@ -3,7 +3,9 @@
     platform: template
     value_template: '{{ is_state("group.mediacenter", "off") or is_state("input_boolean.mediacontrol_gamecube", "on") }}'
   action:
-    service: shell_command.oh_standby
+    service: media_player.turn_off
+    data:
+      entity_id: media_player.snuggery
 
 - alias: 'Shut amp off when in standby and not in use.'
   trigger:
