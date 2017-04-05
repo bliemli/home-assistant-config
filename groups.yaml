@@ -8,6 +8,7 @@
     - group.mediacenter
     - group.snuggery
     - media_player.snuggery
+    - media_player.kodi
 
   switches:
     name: Switches
