@@ -27,6 +27,9 @@
       icon: mdi:brightness-1
       friendly_name: Off
 
+    media_player.snuggery:
+      friendly_name: 'Linn Majik DSM'
+
     light.sphere_lamp_right:
       icon: mdi:blur-radial
       friendly_name: 'Sphere Lamp right'
