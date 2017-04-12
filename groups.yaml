@@ -20,7 +20,7 @@
     - media_player.kodi
 
   mediacenter:
-    name: Mediacenter
+    name: Media Center
     control: hidden
     entities:
     - input_boolean.mediacontrol_music
