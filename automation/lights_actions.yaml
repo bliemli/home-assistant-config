@@ -1,9 +1,27 @@
-- alias: 'Turn signal lamp off when disturbing.'
+- alias: "Media player paused/stopped"
   trigger:
-    platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_tv", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+    platform: state
+    entity_id: media_player.kodi
+    from: 'playing'
+    to: 'idle'
+  condition:
+    condition: state
+    entity_id: light.sphere_lamp_left
+    state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.signal_lamp
+
+- alias: "Media player playing"
+  trigger:
+    platform: state
+    entity_id: media_player.kodi
+    from: 'idle'
+    to: 'playing'
+  condition:
+    condition: state
+    entity_id: light.sphere_lamp_left
+    state: 'on'
   action:
     service: light.turn_off
-    data:
-      entity_id: light.signal_lamp
-
+    entity_id: light.signal_lamp
