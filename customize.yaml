@@ -23,6 +23,9 @@
     scene.office_nightlight:
       icon: mdi:brightness-2
       friendly_name: Nightlight
+    scene.office_off:
+      icon: mdi:brightness-1
+      friendly_name: Off
 
     light.sphere_lamp_right:
       icon: mdi:blur-radial

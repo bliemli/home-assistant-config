@@ -133,3 +133,9 @@
       brightness: 1
       transition: 10
 
+- name: office_off
+  entities:
+    light.office_lamp:
+      state: off
+      transition: 10
+

@@ -9,6 +9,7 @@
     - group.snuggery
     - media_player.snuggery
     - media_player.kodi
+    - group.office
 
   switches:
     name: Switches
@@ -38,6 +39,13 @@
     - scene.snuggery_energize
     - scene.snuggery_movie
     - scene.snuggery_off
+
+  office:
+    name: Office
+    entities:
+    - scene.office_tropical
+    - scene.office_nightlight
+    - scene.office_off
 
   powercontrol:
     name: Power
