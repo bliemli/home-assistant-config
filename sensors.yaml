@@ -14,34 +14,10 @@
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
 
-- platform: command_line
-  name: 'Power Consumption Wii U'
-  command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-  value_template: '{{ value_json.data.watt[0] }}'
-  unit_of_measurement: 'W'
-
-- platform: command_line
-  name: 'Power Consumption GameCube'
-  command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-  value_template: '{{ value_json.data.watt[2] }}'
-  unit_of_measurement: 'W'
-
-- platform: command_line
-  name: 'Power Consumption Phono'
-  command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-  value_template: '{{ value_json.data.watt[3] }}'
-  unit_of_measurement: 'W'
-  scan_interval: 3
-
-- platform: command_line
-  name: 'Power Consumption Linn Majik DSM'
-  command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-  value_template: '{{ value_json.data.watt[4] }}'
-  unit_of_measurement: 'W'
-
-- platform: command_line
-  name: 'Power Consumption B&W ASW10CM'
-  command: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-  value_template: '{{ value_json.data.watt[5] }}'
-  unit_of_measurement: 'W'
+- platform: mfi
+  host: !secret mfi_host
+  username: !secret mfi_username
+  password: !secret mfi_password
+  ssl: true
+  verify_ssl: false
 

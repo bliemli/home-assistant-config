@@ -43,9 +43,9 @@
     name: Power
     icon: mdi:power-socket
     entities:
-    - switch.power_state_tv
-    - switch.power_state_linn_majik_dsm
-    - switch.power_state_bw_asw10cm
-    - switch.power_state_wiiu
-    - switch.power_state_gamecube
+    - switch.mfi_tv
+    - switch.mfi_amp
+    - switch.mfi_subwoofer
+    - switch.mfi_wiiu
+    - switch.mfi_gamecube
 

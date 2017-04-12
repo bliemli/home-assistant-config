@@ -1,7 +1,7 @@
 - alias: 'Switch source to phono if power consume is detected.'
   trigger:
     platform: numeric_state
-    entity_id: sensor.power_consumption_phono
+    entity_id: sensor.mfi_phono
     above: 1
   action:
     service: media_player.select_source

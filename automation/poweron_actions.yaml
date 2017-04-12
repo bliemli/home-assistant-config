@@ -5,7 +5,7 @@
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.power_state_linn_majik_dsm
+      entity_id: switch.mfi_amp
 
 - alias: 'Switch TV on based on media setting.'
   trigger:
@@ -14,7 +14,7 @@
   action:
   - service: switch.turn_on
     data:
-      entity_id: switch.power_state_tv
+      entity_id: switch.mfi_tv
 
 - alias: 'Switch subwoofer on based on media setting.'
   trigger:
@@ -23,7 +23,7 @@
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.power_state_bw_asw10cm
+      entity_id: switch.mfi_subwoofer
 
 - alias: 'Switch Wii U on based on media settings.'
   trigger:
@@ -32,7 +32,7 @@
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.power_state_wiiu
+      entity_id: switch.mfi_wiiu
 
 - alias: 'Switch GameCube on based on media settings.'
   trigger:
@@ -41,5 +41,5 @@
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.power_state_gamecube
+      entity_id: switch.mfi_gamecube
 

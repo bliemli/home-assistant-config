@@ -1,33 +1,7 @@
-- platform: command_line
-  switches:
-    power_state_wiiu:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:1,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:1,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[0] == 1 }}'
-    power_state_tv:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:2,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:2,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[1] == 1 }}'
-    power_state_gamecube:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:3,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:3,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[2] == 1 }}'
-    power_state_phono:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:4,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:4,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[3] == 1 }}'
-    power_state_linn_majik_dsm:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:5,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:5,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[4] == 1 }}'
-    power_state_bw_asw10cm:
-      command_on: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:6,%22state%22:1%7D' &> /dev/null"
-      command_off: "curl -s -X GET 'http://192.168.1.20/?cmd=200&json=%7B%22sn%22:%22SWP6023002000861%22,%22port%22:6,%22state%22:0%7D' &> /dev/null"
-      command_state: "curl -s -X GET 'http://192.168.1.20/?cmd=511&json=%7B%22sn%22:%22SWP6023002000861%22%7D'"
-      value_template: '{{ value_json.data.switch[5] == 1 }}'
+- platform: mfi
+  host: !secret mfi_host
+  username: !secret mfi_username
+  password: !secret mfi_password
+  ssl: true
+  verify_ssl: false
 
