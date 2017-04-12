@@ -15,7 +15,7 @@
       friendly_name: Movie
     scene.snuggery_off:
       icon: mdi:brightness-1
-      friendly_name: All lights off
+      friendly_name: Off
 
     scene.office_tropical:
       icon: mdi:beach
