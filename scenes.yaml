@@ -14,9 +14,9 @@
       transition: 10
     light.paper_lamp:
       state: on
-      xy_color: [0.4575, 0.4101]
-      color_temp: 365
-      brightness: 1
+      xy_color: [0.4009, 0.502]
+      color_temp: 278
+      brightness: 50
       transition: 10
 
 - name: snuggery_relax
@@ -35,8 +35,8 @@
       transition: 10
     light.paper_lamp:
       state: on
-      xy_color: [0.5125, 0.4149]
-      color_temp: 467
+      xy_color: [0.5972, 0.3781]
+      color_temp: 155
       brightness: 1
       transition: 10
 
@@ -56,8 +56,8 @@
       transition: 10
     light.paper_lamp:
       state: on
-      xy_color: [0.5125, 0.4149]
-      color_temp: 467
+      xy_color: [0.65, 0.3398]
+      color_temp: 155
       brightness: 1
       transition: 10
 
