@@ -20,4 +20,5 @@
   password: !secret mfi_password
   ssl: true
   verify_ssl: false
+  scan_interval: 3
 
