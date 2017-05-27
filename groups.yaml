@@ -1,6 +1,6 @@
   default_view:
     view: yes
-    icon: mdi:sofa
+    icon: mdi:home
     entities:
     - sensor.sab_speed
     - sensor.sab_left_gb
@@ -9,9 +9,9 @@
     - group.snuggery
     - group.office
 
-  switches:
-    name: Switches
-    icon: mdi:toggle-switch
+  settings:
+    name: Settings
+    icon: mdi:settings
     view: yes
     entities:
     - group.powercontrol
