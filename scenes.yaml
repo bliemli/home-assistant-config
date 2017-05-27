@@ -12,7 +12,7 @@
       color_temp: 365
       brightness: 254
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: on
       xy_color: [0.4575, 0.4101]
       color_temp: 365
@@ -33,7 +33,7 @@
       color_temp: 467
       brightness: 144
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
       color_temp: 467
@@ -54,7 +54,7 @@
       color_temp: 467
       brightness: 1
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
       color_temp: 467
@@ -75,7 +75,7 @@
       color_temp: 155
       brightness: 203
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
       color_temp: 467
@@ -96,7 +96,7 @@
       color_temp: 231
       brightness: 41
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
       color_temp: 467
@@ -111,7 +111,7 @@
     light.sphere_lamp_right:
       state: off
       transition: 10
-    light.signal_lamp:
+    light.paper_lamp:
       state: off
       transition: 10
 

@@ -31,14 +31,14 @@
       friendly_name: 'Linn Majik DSM'
 
     light.sphere_lamp_right:
-      icon: mdi:blur-radial
+      icon: mdi:circle-outline
       friendly_name: 'Sphere Lamp right'
     light.sphere_lamp_left:
-      icon: mdi:blur-radial
+      icon: mdi:circle-outline
       friendly_name: 'Sphere Lamp left'
-    light.signal_lamp:
-      icon: mdi:rename-box
-      friendly_name: 'Signal Lamp'
+    light.paper_lamp:
+      icon: mdi:blur-radial
+      friendly_name: 'Paper Lamp'
     light.office_lamp:
       icon: mdi:spotlight-beam
       friendly_name: 'Office Lamp'
