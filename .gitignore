@@ -1,7 +1,7 @@
 *.crt
 *.key
 *.log
-*.db
+*.db*
 .HA_VERSION
 known_devices.yaml
 phue.conf
