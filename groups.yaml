@@ -54,6 +54,7 @@
     - switch.mfi_tv
     - switch.mfi_amp
     - switch.mfi_subwoofer
+    - switch.mfi_phono
     - switch.mfi_wiiu
     - switch.mfi_gamecube
 

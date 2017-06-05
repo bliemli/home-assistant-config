@@ -64,7 +64,6 @@
     switch.mfi_phono:
       icon: mdi:power
       friendly_name: Phono
-      hidden: true
     switch.mfi_amp:
       icon: mdi:power
       friendly_name: Linn Majik DSM
