@@ -15,6 +15,7 @@
     view: yes
     entities:
     - group.powercontrol
+    - group.alertcontrol
     - group.all_lights
     - media_player.snuggery
     - media_player.kodi
@@ -57,4 +58,10 @@
     - switch.mfi_phono
     - switch.mfi_wiiu
     - switch.mfi_gamecube
+
+  alertcontrol:
+    name: Alerts
+    icon: mdi:alert
+    entities:
+    - alert.inadvertent_power_consumption
 

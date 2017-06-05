@@ -87,6 +87,9 @@
       icon: mdi:power-socket
       friendly_name: Energy use GameCube
 
+    alert.inadvertent_power_consumption:
+      icon: mdi:power-plug
+
     group.all_lights:
       friendly_name: Lights
       hidden: false
