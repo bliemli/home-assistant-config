@@ -2,20 +2,17 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      xy_color: [0.4575, 0.4101]
       color_temp: 365
       brightness: 254
       transition: 10
     light.sphere_lamp_right:
       state: on
-      xy_color: [0.4575, 0.4101]
       color_temp: 365
       brightness: 254
       transition: 10
     light.paper_lamp:
       state: on
-      xy_color: [0.4009, 0.502]
-      color_temp: 278
+      xy_color: [0.4257, 0.4003]
       brightness: 50
       transition: 10
 
@@ -23,20 +20,17 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      xy_color: [0.5125, 0.4149]
       color_temp: 467
       brightness: 144
       transition: 10
     light.sphere_lamp_right:
       state: on
-      xy_color: [0.5125, 0.4149]
       color_temp: 467
       brightness: 144
       transition: 10
     light.paper_lamp:
       state: on
       xy_color: [0.5972, 0.3781]
-      color_temp: 155
       brightness: 1
       transition: 10
 
@@ -44,20 +38,17 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      xy_color: [0.5125, 0.4149]
       color_temp: 467
       brightness: 1
       transition: 10
     light.sphere_lamp_right:
       state: on
-      xy_color: [0.5125, 0.4149]
       color_temp: 467
       brightness: 1
       transition: 10
     light.paper_lamp:
       state: on
       xy_color: [0.65, 0.3398]
-      color_temp: 155
       brightness: 1
       transition: 10
 
@@ -65,20 +56,17 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      xy_color: [0.3151, 0.3251]
       color_temp: 155
       brightness: 203
       transition: 10
     light.sphere_lamp_right:
       state: on
-      xy_color: [0.3151, 0.3251]
       color_temp: 155
       brightness: 203
       transition: 10
     light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
-      color_temp: 467
       brightness: 1
       transition: 10
 
@@ -86,20 +74,17 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      xy_color: [0.3684, 0.3716]
       color_temp: 231
       brightness: 41
       transition: 10
     light.sphere_lamp_right:
       state: on
-      xy_color: [0.3684, 0.3716]
       color_temp: 231
       brightness: 41
       transition: 10
     light.paper_lamp:
       state: on
       xy_color: [0.5125, 0.4149]
-      color_temp: 467
       brightness: 1
       transition: 10
 
@@ -120,7 +105,6 @@
     light.office_lamp:
       state: on
       xy_color: [0.5993, 0.3765]
-      color_temp: 154
       brightness: 123
       transition: 10
 
@@ -128,7 +112,6 @@
   entities:
     light.office_lamp:
       state: on
-      xy_color: [0.561, 0.4042]
       color_temp: 467
       brightness: 1
       transition: 10
