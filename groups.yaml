@@ -57,7 +57,7 @@
     - switch.mfi_subwoofer
     - switch.mfi_phono
     - switch.mfi_wiiu
-    - switch.mfi_gamecube
+    - switch.mfi_nesmini
 
   alertcontrol:
     name: Alerts
