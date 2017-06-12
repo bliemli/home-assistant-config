@@ -21,4 +21,5 @@
   ssl: true
   verify_ssl: false
   scan_interval: 3
+  entity_namespace: mfi
 

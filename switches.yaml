@@ -4,4 +4,5 @@
   password: !secret mfi_password
   ssl: true
   verify_ssl: false
+  entity_namespace: mfi
 
