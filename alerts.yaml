@@ -1,6 +1,6 @@
-  inadvertent_power_consumption:
-    name: Inadvertent power consumption
-    entity_id: binary_sensor.inadvertent_power_consumption
+  power_consumption:
+    name: Power Consumption
+    entity_id: binary_sensor.power_consumption
     repeat:
     - 40
     - 5

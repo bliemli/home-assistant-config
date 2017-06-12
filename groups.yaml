@@ -71,6 +71,6 @@
     name: Alerts
     icon: mdi:alert
     entities:
-    - alert.inadvertent_power_consumption
+    - alert.power_consumption
     - alert.garage_door
 
