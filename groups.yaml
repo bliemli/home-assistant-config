@@ -2,12 +2,15 @@
     view: yes
     icon: mdi:home
     entities:
+    - binary_sensor.garage_door
+    - binary_sensor.car_presence
     - sensor.sab_speed
     - sensor.sab_left_gb
     - updater.updater
     - group.mediacenter
     - group.snuggery
     - group.office
+    - group.garage
 
   settings:
     name: Settings
@@ -48,6 +51,11 @@
     - scene.office_nightlight
     - scene.office_off
 
+  garage:
+    name: Garage
+    entities:
+    - cover.garage
+
   powercontrol:
     name: Power
     icon: mdi:power-socket
@@ -64,4 +72,5 @@
     icon: mdi:alert
     entities:
     - alert.inadvertent_power_consumption
+    - alert.garage_door
 

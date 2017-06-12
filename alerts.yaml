@@ -8,3 +8,11 @@
     skip_first: true
     notifiers:
     - pushover
+  garage_door:
+    name: Garage Door
+    entity_id: binary_sensor.garage_door
+    repeat:
+    - 30
+    skip_first: true
+    notifiers:
+    - pushover

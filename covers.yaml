@@ -1,0 +1,8 @@
+  platform: opengarage
+  covers:
+      garage:        
+        host: !secret opengarage_host
+        device_key: opendoor
+        name: Garage
+  scan_interval: 4
+

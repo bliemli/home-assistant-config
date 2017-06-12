@@ -47,6 +47,7 @@ notify:
   user_key: !secret pushover_user_key
 
 binary_sensor: !include binary_sensors.yaml
+cover: !include covers.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 

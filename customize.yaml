@@ -89,6 +89,8 @@
 
     alert.inadvertent_power_consumption:
       icon: mdi:power-plug
+    alert.garage_door:
+      icon: mdi:garage-open
 
     group.all_lights:
       friendly_name: Lights

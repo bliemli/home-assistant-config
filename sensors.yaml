@@ -13,6 +13,62 @@
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
+    garage_door:
+      friendly_name: 'Garage Door'
+      value_template: '{% if states.cover.garage %}
+          {% if states.cover.garage.attributes["door_state"] == "open" %}
+            Open
+          {% elif states.cover.garage.attributes["door_state"] == "closed" %}
+            Closed
+          {% elif states.cover.garage.attributes["door_state"] == "opening" %}
+            Opening
+          {% elif states.cover.garage.attributes["door_state"] == "closing" %}
+            Closing
+          {% else %}
+            Unknown
+          {% endif %}
+        {% else %}
+          n/a
+        {% endif %}'
+      icon_template: '{% if states.cover.garage %}
+          {% if states.cover.garage.attributes["door_state"] == "open" %}
+            mdi:garage-open
+          {% elif states.cover.garage.attributes["door_state"] == "closed" %}
+            mdi:garage
+          {% elif states.cover.garage.attributes["door_state"] == "opening" %}
+            mdi:arrow-up-bold-box
+          {% elif states.cover.garage.attributes["door_state"] == "closing" %}
+            mdi:arrow-down-bold-box
+          {% else %}
+            mdi:help-circle-outline
+          {% endif %}
+        {% else %}
+          mdi:help-circle-outline
+        {% endif %}'
+    car_presence:
+      friendly_name: 'Car Presence'
+      value_template: '{% if states.cover.garage %}
+          {% if states.cover.garage.state == "open" %}
+            n/a
+          {% elif ((states.cover.garage.attributes["distance_sensor"] > 40) and (states.cover.garage.attributes["distance_sensor"] < 100)) %}
+            Yes
+          {% else %}
+            No
+          {% endif %}
+        {% else %}
+          n/a
+        {% endif %}'
+      icon_template: '{% if states.cover.garage %}
+          {% if states.cover.garage.state == "open" %}
+            mdi:help-circle-outline
+          {% elif ((states.cover.garage.attributes["distance_sensor"] > 40) and (states.cover.garage.attributes["distance_sensor"] < 100)) %}
+            mdi:car-hatchback
+          {% else %}
+            No
+          {% endif %}
+        {% else %}
+          mdi:help-circle-outline
+        {% endif %}'
 
 - platform: mfi
   host: !secret mfi_host
