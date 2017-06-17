@@ -2,7 +2,7 @@
   trigger:
     platform: state
     entity_id: input_select.media_control
-    state: TV
+    to: TV
   action:
     service: media_player.select_source
     data:
