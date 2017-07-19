@@ -1,7 +1,7 @@
 - alias: 'Switch amp on'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_music", "on") or is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_music", "on") or is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_nes", "on") }}'
   action:
     service: switch.turn_on
     data:
@@ -10,7 +10,7 @@
 - alias: 'Switch on TV'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_tv", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") or is_state("input_boolean.mediacontrol_tv", "on") or is_state("input_boolean.mediacontrol_wiiu", "on") or is_state("input_boolean.mediacontrol_gamecube", "on") or is_state("input_boolean.mediacontrol_nes", "on") }}'
   action:
   - service: switch.turn_on
     data:
@@ -43,12 +43,12 @@
     data:
       entity_id: switch.mfi_wiiu
 
-- alias: 'Switch on NES mini'
+- alias: 'Switch on NES'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_nes", "on") }}'
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.mfi_nesmini
+      entity_id: switch.mfi_nes
 

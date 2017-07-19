@@ -52,12 +52,12 @@
     data:
       entity_id: switch.mfi_wiiu
       
-- alias: 'Shut off NES mini when not in use.'
+- alias: 'Shut off NES when not in use.'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_nesmini", "off") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_nes", "off") }}'
   action:
     service: switch.turn_off
     data:
-      entity_id: switch.mfi_nesmini
+      entity_id: switch.mfi_nes
 

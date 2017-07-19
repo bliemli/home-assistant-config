@@ -24,7 +24,7 @@
       state: Wii U
     - condition: state
       entity_id: input_select.media_control
-      state: NES mini
+      state: NES
   action:
     service: media_player.select_source
     data:

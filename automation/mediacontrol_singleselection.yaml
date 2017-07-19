@@ -10,7 +10,7 @@
     - input_boolean.mediacontrol_tv
     - input_boolean.mediacontrol_wiiu
     - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nesmini
+    - input_boolean.mediacontrol_nes
 
 - alias: 'Switch all mediacontrols off except Movies'
   trigger:
@@ -24,7 +24,7 @@
     - input_boolean.mediacontrol_tv
     - input_boolean.mediacontrol_wiiu
     - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nesmini
+    - input_boolean.mediacontrol_nes
 
 - alias: 'Switch all mediacontrols off except TV'
   trigger:
@@ -38,7 +38,7 @@
     - input_boolean.mediacontrol_movies
     - input_boolean.mediacontrol_wiiu
     - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nesmini
+    - input_boolean.mediacontrol_nes
 
 - alias: 'Switch all mediacontrols off except Wii U'
   trigger:
@@ -52,7 +52,7 @@
     - input_boolean.mediacontrol_movies
     - input_boolean.mediacontrol_tv
     - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nesmini
+    - input_boolean.mediacontrol_nes
 
 - alias: 'Switch all mediacontrols off except GameCube'
   trigger:
@@ -66,12 +66,12 @@
     - input_boolean.mediacontrol_movies
     - input_boolean.mediacontrol_tv
     - input_boolean.mediacontrol_wiiu
-    - input_boolean.mediacontrol_nesmini
+    - input_boolean.mediacontrol_nes
 
-- alias: 'Switch all mediacontrols off except NES mini'
+- alias: 'Switch all mediacontrols off except NES'
   trigger:
     platform: state
-    entity_id: input_boolean.mediacontrol_nesmini
+    entity_id: input_boolean.mediacontrol_nes
     to: 'on'
   action:
     service: input_boolean.turn_off

@@ -39,13 +39,13 @@
       entity_id: media_player.snuggery
       source: "Wii U"
 
-- alias: 'Switch source to NES mini when activated.'
+- alias: 'NES switch active'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_nesmini", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_nes", "on") and not is_state("media_player.snuggery", "off") }}'
   action:
     service: media_player.select_source
     data:
       entity_id: media_player.snuggery
-      source: "NES mini"
+      source: 'NES'
 

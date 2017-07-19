@@ -18,8 +18,8 @@
     name: GameCube
     icon: mdi:cube
     initial: off
-  mediacontrol_nesmini:
-    name: NES mini
+  mediacontrol_nes:
+    name: NES Classic Edition
     icon: mdi:gamepad-variant
     initial: off
 

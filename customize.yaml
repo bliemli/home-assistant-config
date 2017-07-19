@@ -55,9 +55,9 @@
     switch.mfi_wiiu:
       icon: mdi:power
       friendly_name: Wii U
-    switch.mfi_nesmini:
+    switch.mfi_nes:
       icon: mdi:power
-      friendly_name: NES mini
+      friendly_name: NES
     switch.mfi_tv:
       icon: mdi:power
       friendly_name: TV
@@ -83,9 +83,9 @@
     sensor.mfi_wiiu:
       icon: mdi:power-socket
       friendly_name: Energy use Wii U
-    sensor.mfi_nesmini:
+    sensor.mfi_nes:
       icon: mdi:power-socket
-      friendly_name: Energy use NES mini
+      friendly_name: Energy use NES
 
     alert.power_consumption:
       icon: mdi:power-plug

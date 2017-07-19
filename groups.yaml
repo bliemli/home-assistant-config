@@ -1,4 +1,5 @@
   default_view:
+    name: Home
     view: yes
     icon: mdi:home
     entities:
@@ -11,7 +12,6 @@
     - group.snuggery
     - group.office
     - group.garage
-
   settings:
     name: Settings
     icon: mdi:settings
@@ -22,7 +22,6 @@
     - group.all_lights
     - media_player.snuggery
     - media_player.kodi
-
   mediacenter:
     name: Media Center
     control: hidden
@@ -32,8 +31,7 @@
     - input_boolean.mediacontrol_tv
     - input_boolean.mediacontrol_wiiu
     - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nesmini
-
+    - input_boolean.mediacontrol_nes
   snuggery:
     name: Snuggery
     entities:
@@ -43,19 +41,16 @@
     - scene.snuggery_energize
     - scene.snuggery_movie
     - scene.snuggery_off
-
   office:
     name: Office
     entities:
     - scene.office_tropical
     - scene.office_nightlight
     - scene.office_off
-
   garage:
     name: Garage
     entities:
     - cover.garage
-
   powercontrol:
     name: Power
     icon: mdi:power-socket
@@ -65,12 +60,10 @@
     - switch.mfi_subwoofer
     - switch.mfi_phono
     - switch.mfi_wiiu
-    - switch.mfi_nesmini
-
+    - switch.mfi_nes
   alertcontrol:
     name: Alerts
     icon: mdi:alert
     entities:
     - alert.power_consumption
     - alert.garage_door
-
