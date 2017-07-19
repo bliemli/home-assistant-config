@@ -1,4 +1,4 @@
-- alias: 'Switch source to phono if power consume is detected.'
+- alias: 'Phono consumes power'
   trigger:
     platform: numeric_state
     entity_id: sensor.mfi_phono
@@ -9,30 +9,30 @@
       entity_id: media_player.snuggery
       source: "Phono"
 
-- alias: 'Switch source to Playlist based on media setting.'
+- alias: 'Music switch active'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_music", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_music", "on") and not is_state("media_player.snuggery", "off") }}'
   action:
     service: media_player.select_source
     data:
       entity_id: media_player.snuggery
       source: "Playlist"
 
-- alias: 'Switch source to Kodi based on media setting.'
+- alias: 'Kodi switch active'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_movies", "on") and not is_state("media_player.snuggery", "off") }}'
   action:
     service: media_player.select_source
     data:
       entity_id: media_player.snuggery
       source: "Kodi"
 
-- alias: 'Switch source to Wii U when activated.'
+- alias: 'Wii U switch active'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_boolean.mediacontrol_wiiu", "on") }}'
+    value_template: '{{ is_state("input_boolean.mediacontrol_wiiu", "on") and not is_state("media_player.snuggery", "off") }}'
   action:
     service: media_player.select_source
     data:
