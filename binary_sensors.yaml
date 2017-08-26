@@ -10,4 +10,7 @@
       friendly_name: 'Car Presence'
       device_class: 'occupancy'
       value_template: '{{ states.cover.garage.attributes.distance_sensor > 40 and states.cover.garage.attributes.distance_sensor < 100 }}'
+    roomba_bin:
+      friendly_name: 'Roomba Bin'
+      value_template: '{{ states.vacuum.bodesuri.attributes.bin_full }}'
 

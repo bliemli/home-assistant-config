@@ -5,6 +5,7 @@
     entities:
     - binary_sensor.garage_door
     - binary_sensor.car_presence
+    - binary_sensor.roomba_bin
     - sensor.sab_speed
     - sensor.sab_left_gb
     - updater.updater
@@ -17,9 +18,10 @@
     icon: mdi:settings
     view: yes
     entities:
+    - group.all_lights
     - group.powercontrol
     - group.alertcontrol
-    - group.all_lights
+    - group.vacuumcontrol
   mediacenter:
     name: Media Center
     control: hidden
@@ -59,3 +61,12 @@
     entities:
     - alert.power_consumption
     - alert.garage_door
+  vacuumcontrol:
+    name: Roomba
+    control: hidden
+    entities:
+    - vacuum.bodesuri
+    - automation.roomba_schedule
+    - automation.roomba_bin_full_notification
+    - automation.roomba_state_change_notification
+

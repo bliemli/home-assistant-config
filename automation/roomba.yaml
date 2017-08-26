@@ -1,0 +1,36 @@
+- alias: 'Roomba Schedule'
+  trigger:
+    platform: time
+    at: '14:00:00'
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+    service: vacuum.start_pause
+    entity_id: vacuum.bodesuri
+
+- alias: 'Roomba State Change Notification'
+  trigger:
+    platform: state
+    entity_id: vacuum.bodesuri
+  action:
+    service: notify.pushover
+    data:
+      message: 'Roomba state is {{ states.vacuum.bodesuri.attributes.status }}.'
+
+- alias: 'Roomba Bin Full Notification'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.roomba_bin
+    from: 'false'
+    to: 'true'
+  action:
+    service: notify.pushover
+    data:
+      message: 'Roomba bin is full.'
+

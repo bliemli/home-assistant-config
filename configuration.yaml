@@ -43,6 +43,13 @@ media_player:
   name: Kodi
 - platform: openhome
 
+vacuum:
+  - platform: roomba
+    name: bodesuri
+    host: !secret roomba_host
+    username: !secret roomba_blid
+    password: !secret roomba_password
+
 notify:
 - platform: pushover
   name: pushover

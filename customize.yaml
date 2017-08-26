@@ -20,6 +20,9 @@
     media_player.snuggery:
       friendly_name: 'Linn Majik DSM'
 
+    vacuum.bodesuri:
+      friendly_name: Bodesuri
+
     light.sphere_lamp_right:
       icon: mdi:circle-outline
       friendly_name: 'Sphere Lamp right'
