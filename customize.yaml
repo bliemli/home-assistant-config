@@ -17,16 +17,6 @@
       icon: mdi:brightness-1
       friendly_name: "Off"
 
-    scene.office_tropical:
-      icon: mdi:beach
-      friendly_name: Tropical
-    scene.office_nightlight:
-      icon: mdi:brightness-2
-      friendly_name: Nightlight
-    scene.office_off:
-      icon: mdi:brightness-1
-      friendly_name: "Off"
-
     media_player.snuggery:
       friendly_name: 'Linn Majik DSM'
 
@@ -39,17 +29,7 @@
     light.paper_lamp:
       icon: mdi:blur-radial
       friendly_name: 'Paper Lamp'
-    light.office_lamp:
-      icon: mdi:spotlight-beam
-      friendly_name: 'Office Lamp'
     light.mood_stripe:
-      hidden: true
-
-    light.bedroom:
-      hidden: true
-    light.office:
-      hidden: true
-    light.snuggery:
       hidden: true
 
     switch.mfi_wiiu:
