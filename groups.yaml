@@ -11,6 +11,7 @@
     - group.mediacenter
     - group.snuggery
     - group.garage
+    - media_player.snuggery
   settings:
     name: Settings
     icon: mdi:settings
@@ -19,8 +20,6 @@
     - group.powercontrol
     - group.alertcontrol
     - group.all_lights
-    - media_player.snuggery
-    - media_player.kodi
   mediacenter:
     name: Media Center
     control: hidden
