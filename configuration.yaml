@@ -27,6 +27,7 @@ sun:
 
 light:
   platform: hue
+  allow_hue_groups: false
 
 logger:
   default: info
