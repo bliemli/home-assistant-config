@@ -1,0 +1,14 @@
+- alias: 'Garage door opener'
+  trigger:
+    platform: state
+    entity_id: !secret device1
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: binary_sensor.car_presence
+    state: 'off'
+  action:
+    service: cover.open_cover
+    entity_id: cover.garage
+
