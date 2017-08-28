@@ -4,14 +4,12 @@
     icon: mdi:home
     entities:
     - binary_sensor.garage_door
-    - binary_sensor.car_presence
     - binary_sensor.roomba_bin
     - sensor.sab_speed
     - sensor.sab_left_gb
     - updater.updater
     - group.mediacenter
     - group.snuggery
-    - group.garage
     - media_player.snuggery
   settings:
     name: Settings
@@ -22,6 +20,7 @@
     - group.powercontrol
     - group.alertcontrol
     - group.vacuumcontrol
+    - group.garagecontrol
   mediacenter:
     name: Media Center
     control: hidden
@@ -41,10 +40,6 @@
     - scene.snuggery_energize
     - scene.snuggery_movie
     - scene.snuggery_off
-  garage:
-    name: Garage
-    entities:
-    - cover.garage
   powercontrol:
     name: Power
     icon: mdi:power-socket
@@ -69,4 +64,10 @@
     - automation.roomba_schedule
     - automation.roomba_bin_full_notification
     - automation.roomba_state_change_notification
+  garagecontrol:
+    name: Garage
+    control: hidden
+    entities:
+    - cover.garage
+    - automation.open_garage_when_returning_home_by_car
 
