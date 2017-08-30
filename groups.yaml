@@ -69,5 +69,5 @@
     control: hidden
     entities:
     - cover.garage
-    - automation.open_garage_when_returning_home_by_car
+    - automation.garage_door_opener
 
