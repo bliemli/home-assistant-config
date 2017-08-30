@@ -1,5 +1,5 @@
-  power_consumption:
-    name: Power Consumption
+  power_consumption_detected:
+    name: Power consumption detected
     entity_id: binary_sensor.power_consumption
     repeat:
     - 40
@@ -8,8 +8,8 @@
     skip_first: true
     notifiers:
     - pushover
-  garage_door:
-    name: Garage Door
+  garage_door_open:
+    name: Garage door open
     entity_id: binary_sensor.garage_door
     repeat:
     - 30

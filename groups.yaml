@@ -54,8 +54,8 @@
     name: Alerts
     icon: mdi:alert
     entities:
-    - alert.power_consumption
-    - alert.garage_door
+    - alert.power_consumption_detected
+    - alert.garage_door_open
   vacuumcontrol:
     name: Roomba
     control: hidden
