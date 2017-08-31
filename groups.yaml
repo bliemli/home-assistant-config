@@ -70,4 +70,5 @@
     entities:
     - cover.garage
     - automation.garage_door_opener
+    - automation.garage_door_closer
 
