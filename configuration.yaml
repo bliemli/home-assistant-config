@@ -25,6 +25,9 @@ updater:
 discovery:
 sun:
 
+device_tracker:
+- platform: locative
+
 light:
   platform: hue
   allow_hue_groups: false
