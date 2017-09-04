@@ -1,0 +1,175 @@
+# Amp automations
+
+- alias: 'Amp power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "music") or is_state("input_select.mediacenter", "movies") or is_state("input_select.mediacenter", "wiiu") or is_state("input_select.mediacenter", "nes") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_amp
+
+- alias: 'Amp standby'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") or is_state("input_select.mediacenter", "gamecube") }}'
+  action:
+    service: media_player.turn_off
+    data:
+      entity_id: media_player.snuggery
+
+- alias: 'Amp power off'
+  trigger:
+    platform: template
+    value_template: '{{ float(states.sensor.mfi_amp.state) < 25 and (is_state("input_select.mediacenter", "off") or is_state("input_select.mediacenter", "gamecube") or is_state("input_select.mediacenter", "tv")) }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_amp
+
+- alias: 'Amp source phono'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.mfi_phono
+    above: 1
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.snuggery
+      source: "Phono"
+
+- alias: 'Amp source Kodi'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "movies") and not is_state("media_player.snuggery", "off") }}'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.snuggery
+      source: "Kodi"
+
+- alias: 'Amp source Wii U'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "wiiu") and not is_state("media_player.snuggery", "off") }}'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.snuggery
+      source: "Wii U"
+
+- alias: 'Amp source NES'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "nes") and not is_state("media_player.snuggery", "off") }}'
+  action:
+    service: media_player.select_source
+    data:
+      entity_id: media_player.snuggery
+      source: 'NES'
+
+
+# Phono automations
+
+- alias: 'Phono power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "music") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_phono
+
+- alias: 'Phono power off'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_phono
+
+
+# TV automations
+
+- alias: 'TV power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "movies") or is_state("input_select.mediacenter", "tv") or is_state("input_select.mediacenter", "wiiu") or is_state("input_select.mediacenter", "gamecube") or is_state("input_select.mediacenter", "nes") }}'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.mfi_tv
+
+- alias: 'TV power off'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") or is_state("input_select.mediacenter", "music") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_tv
+
+
+# Subwoofer automations
+
+- alias: 'Subwoofer power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "music") or is_state("input_select.mediacenter", "movies") or is_state("input_select.mediacenter", "wiiu") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_subwoofer
+
+- alias: 'Subwoofer power off'
+  trigger:
+    platform: template
+    value_template: '{{ float(states.sensor.mfi_subwoofer.state) < 3 and (is_state("input_select.mediacenter", "off") or is_state("input_select.mediacenter", "tv") or is_state("input_select.mediacenter", "gamecube")) }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_subwoofer
+
+
+# Wii U automations
+
+- alias: 'Wii U power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "wiiu") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_wiiu
+
+- alias: 'Wii U power off'
+  trigger:
+    platform: template
+    value_template: '{{ float(states.sensor.mfi_wiiu.state) < 3 and is_state("input_select.mediacenter", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_wiiu
+      
+
+# NES automations
+
+- alias: 'NES power on'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "nes") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_nes
+
+- alias: 'NES power off'
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_nes
+

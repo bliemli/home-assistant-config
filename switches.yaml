@@ -6,3 +6,78 @@
   verify_ssl: false
   entity_namespace: mfi
 
+- platform: template
+  switches:
+    mediacenter_music:
+      value_template: "{{ is_state('input_select.mediacenter', 'music') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'music'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+    mediacenter_movies:
+      value_template: "{{ is_state('input_select.mediacenter', 'movies') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'movies'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+    mediacenter_tv:
+      value_template: "{{ is_state('input_select.mediacenter', 'tv') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'tv'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+    mediacenter_wiiu:
+      value_template: "{{ is_state('input_select.mediacenter', 'wiiu') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'wiiu'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+    mediacenter_gamecube:
+      value_template: "{{ is_state('input_select.mediacenter', 'gamecube') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'gamecube'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+    mediacenter_nes:
+      value_template: "{{ is_state('input_select.mediacenter', 'nes') }}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'nes'
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.mediacenter
+          option: 'off'
+

@@ -68,7 +68,7 @@ alert: !include alerts.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 
-input_boolean: !include input_booleans.yaml
+input_select: !include input_selects.yaml
 shell_command: !include shell_commands.yaml
 automation: !include_dir_merge_list automation
 

@@ -1,0 +1,11 @@
+  mediacenter:
+    options:
+     - 'music'
+     - 'movies'
+     - 'tv'
+     - 'wiiu'
+     - 'gamecube'
+     - 'nes'
+     - 'off'
+    initial: 'off'
+

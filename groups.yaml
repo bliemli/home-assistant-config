@@ -25,12 +25,12 @@
     name: Media Center
     control: hidden
     entities:
-    - input_boolean.mediacontrol_music
-    - input_boolean.mediacontrol_movies
-    - input_boolean.mediacontrol_tv
-    - input_boolean.mediacontrol_wiiu
-    - input_boolean.mediacontrol_gamecube
-    - input_boolean.mediacontrol_nes
+    - switch.mediacenter_music
+    - switch.mediacenter_movies
+    - switch.mediacenter_tv
+    - switch.mediacenter_wiiu
+    - switch.mediacenter_gamecube
+    - switch.mediacenter_nes
   snuggery:
     name: Snuggery
     entities:

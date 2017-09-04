@@ -35,6 +35,25 @@
     light.mood_stripe:
       hidden: true
 
+    switch.mediacenter_music:
+      friendly_name: 'Music'
+      icon: mdi:speaker
+    switch.mediacenter_movies:
+      friendly_name: 'Movies'
+      icon: mdi:kodi
+    switch.mediacenter_tv:
+      friendly_name: 'TV'
+      icon: mdi:television
+    switch.mediacenter_wiiu:
+      friendly_name: 'Wii U'
+      icon: mdi:wiiu
+    switch.mediacenter_gamecube:
+      friendly_name: 'GameCube'
+      icon: mdi:cube
+    switch.mediacenter_nes:
+      friendly_name: 'NES Classic Edition'
+      icon: mdi:gamepad-variant
+
     switch.mfi_wiiu:
       icon: mdi:power-socket
       friendly_name: Wii U
