@@ -36,38 +36,38 @@
       hidden: true
 
     switch.mfi_wiiu:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: Wii U
     switch.mfi_nes:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: NES
     switch.mfi_tv:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: TV
     switch.mfi_phono:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: Phono
     switch.mfi_amp:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: Linn Majik DSM
     switch.mfi_subwoofer:
-      icon: mdi:power
+      icon: mdi:power-socket
       friendly_name: B&W ASW10CM
 
     sensor.mfi_amp:
-      icon: mdi:power-socket
+      icon: mdi:gauge
       friendly_name: Energy use amp
     sensor.mfi_subwoofer:
-      icon: mdi:power-socket
+      icon: mdi:gauge
       friendly_name: Energy use subwoofer
     sensor.mfi_phono:
-      icon: mdi:power-socket
+      icon: mdi:gauge
       friendly_name: Energy use phono
     sensor.mfi_wiiu:
-      icon: mdi:power-socket
+      icon: mdi:gauge
       friendly_name: Energy use Wii U
     sensor.mfi_nes:
-      icon: mdi:power-socket
+      icon: mdi:gauge
       friendly_name: Energy use NES
 
     alert.power_consumption_detected:
