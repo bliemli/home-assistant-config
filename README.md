@@ -29,6 +29,11 @@ The Ubiquiti mPower outlets can be used to read power consumption and to control
 Another possibility is to automatically switch the source of the amplifier to 'Phono' if the turntable is using energy.
 
 
+### Switches based on input_select
+
+Sometimes switches on the frontend are more appropriate, prettier or whatever than a dropdown list. The template switches defined in switches.yaml are based on an input_select component and make it possible to do a single selection switches group. So the same logic applies as for a dropdown list with one element active at all times, implemented as switches.
+
+
 ## Screenshots
 
 ![Screenshot 1](images/ha01.png)
