@@ -10,9 +10,6 @@
     scene.snuggery_energize:
       icon: mdi:brightness-5
       friendly_name: Energize
-    scene.snuggery_movie:
-      icon: mdi:brightness-3
-      friendly_name: Movie
     scene.snuggery_off:
       icon: mdi:brightness-1
       friendly_name: "Off"

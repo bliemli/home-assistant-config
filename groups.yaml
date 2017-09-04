@@ -38,7 +38,6 @@
     - scene.snuggery_relax
     - scene.snuggery_nightlight
     - scene.snuggery_energize
-    - scene.snuggery_movie
     - scene.snuggery_off
   powercontrol:
     name: Power

@@ -70,24 +70,6 @@
       brightness: 1
       transition: 10
 
-- name: snuggery_movie
-  entities:
-    light.sphere_lamp_left:
-      state: on
-      color_temp: 231
-      brightness: 41
-      transition: 10
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 231
-      brightness: 41
-      transition: 10
-    light.paper_lamp:
-      state: on
-      xy_color: [0.5125, 0.4149]
-      brightness: 1
-      transition: 10
-
 - name: snuggery_off
   entities:
     light.sphere_lamp_left:
