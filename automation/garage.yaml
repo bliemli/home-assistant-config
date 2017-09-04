@@ -3,7 +3,7 @@
     platform: state
     entity_id: !secret device1
     from: 'not_home'
-    to: 'home'
+    to: 'pre_home'
   condition:
     condition: state
     entity_id: binary_sensor.car_presence
