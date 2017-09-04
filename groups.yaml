@@ -16,11 +16,11 @@
     icon: mdi:settings
     view: yes
     entities:
-    - group.all_lights
     - group.powercontrol
-    - group.alertcontrol
-    - group.vacuumcontrol
     - group.garagecontrol
+    - group.vacuumcontrol
+    - group.all_lights
+    - group.alertcontrol
   mediacenter:
     name: Media Center
     control: hidden
