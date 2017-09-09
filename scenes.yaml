@@ -56,18 +56,18 @@
   entities:
     light.sphere_lamp_left:
       state: on
-      color_temp: 155
-      brightness: 203
+      color_temp: 156
+      brightness: 254
       transition: 10
     light.sphere_lamp_right:
       state: on
-      color_temp: 155
-      brightness: 203
+      color_temp: 156
+      brightness: 254
       transition: 10
     light.paper_lamp:
       state: on
-      xy_color: [0.5125, 0.4149]
-      brightness: 1
+      color_temp: 156
+      brightness: 4
       transition: 10
 
 - name: snuggery_off
