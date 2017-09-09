@@ -83,7 +83,7 @@
 - alias: 'Phono power off'
   trigger:
     platform: template
-    value_template: '{{ is_state("input_select.mediacenter", "off") }}'
+    value_template: '{{ is_state("input_select.mediacenter", "off") or not is_state("input_select.mediacenter", "music") }}'
   action:
     service: switch.turn_off
     data:
