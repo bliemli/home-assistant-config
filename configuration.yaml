@@ -12,8 +12,6 @@ frontend:
 #  ssl_certificate: !secret ssl_certificate
 #  ssl_key: !secret ssl_key
 
-config:
-
 recorder:
   purge_days: 30
 
