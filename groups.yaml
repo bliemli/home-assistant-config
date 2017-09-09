@@ -35,9 +35,9 @@
     name: Snuggery
     entities:
     - scene.snuggery_standard
+    - scene.snuggery_energize
     - scene.snuggery_relax
     - scene.snuggery_nightlight
-    - scene.snuggery_energize
     - scene.snuggery_off
   powercontrol:
     name: Power
