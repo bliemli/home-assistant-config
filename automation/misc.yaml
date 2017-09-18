@@ -7,3 +7,24 @@
     data:
       message: 'Update for Home Assistant is available.'
 
+- alias: 'Active media player visibility'
+  trigger:
+  - platform: state
+    entity_id: sensor.active_media_players
+  action:
+  - service_template: >
+      {% if trigger.to_state.state != '' %}
+        group.set
+      {% endif %}
+    data_template:
+      object_id: active_media_players
+      visible: true
+      entities: '{{ trigger.to_state.state }}'
+  - service_template: >
+      {% if trigger.to_state.state == '' %}
+        group.set
+      {% endif %}
+    data:
+      object_id: active_media_players
+      visible: false
+

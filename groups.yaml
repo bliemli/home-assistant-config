@@ -10,7 +10,8 @@
     - updater.updater
     - group.mediacenter
     - group.snuggery
-    - media_player.snuggery
+    - group.permanent_media_players
+    - group.active_media_players
   settings:
     name: Settings
     icon: mdi:settings
@@ -39,6 +40,8 @@
     - scene.snuggery_relax
     - scene.snuggery_nightlight
     - scene.snuggery_off
+  permanent_media_players:
+    - media_player.snuggery
   powercontrol:
     name: Power
     icon: mdi:power-socket

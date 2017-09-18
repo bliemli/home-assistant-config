@@ -22,4 +22,14 @@
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
+    active_media_players:
+      friendly_name: 'Active Media Players'
+      value_template: >
+        {{ states.media_player
+         | rejectattr('state', 'equalto', 'idle')
+         | rejectattr('state', 'equalto', 'off')
+         | rejectattr('entity_id', 'equalto', 'media_player.snuggery')
+         | map(attribute ='entity_id')
+         | join(', ')
+        }}
 
