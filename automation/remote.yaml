@@ -1,0 +1,11 @@
+- alias: 'Amp remote standby'
+  trigger:
+    platform: state
+    entity_id: media_player.snuggery
+    to: 'off'
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.mediacenter
+      option: 'off'
+
