@@ -16,6 +16,15 @@
   scan_interval: 3
   entity_namespace: mfi
 
+- platform: haveibeenpwned
+  email: 
+    - !secret hibp_mail01
+    - !secret hibp_mail02
+    - !secret hibp_mail03
+    - !secret hibp_mail04
+    - !secret hibp_mail05
+    - !secret hibp_mail06
+
 - platform: template
   sensors:
     sab_left_gb:
