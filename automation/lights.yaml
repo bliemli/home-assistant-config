@@ -1,3 +1,29 @@
+- alias: "Movies setting active"
+  trigger:
+    platform: state
+    entity_id: input_select.mediacenter
+    to: 'movies'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "+1:00:00"
+  action:
+    service: scene.turn_on
+    entity_id: scene.snuggery_movies_pause
+
+- alias: "Movies setting not active anymore"
+  trigger:
+    platform: state
+    entity_id: input_select.mediacenter
+    from: 'movies'
+  condition:
+    condition: state
+    entity_id: light.sphere_lamp_left
+    state: 'on'
+  action:
+    service: scene.turn_on
+    entity_id: scene.snuggery_relax
+
 - alias: "Media player paused/stopped"
   trigger:
     platform: state
@@ -9,10 +35,8 @@
     entity_id: light.sphere_lamp_left
     state: 'on'
   action:
-    service: light.turn_on
-    entity_id: light.paper_lamp
-    data:
-      transition: 3
+    service: scene.turn_on
+    entity_id: scene.snuggery_movies_pause
 
 - alias: "Media player playing"
   trigger:
@@ -25,5 +49,5 @@
     entity_id: light.sphere_lamp_left
     state: 'on'
   action:
-    service: light.turn_off
-    entity_id: light.paper_lamp
+    service: scene.turn_off
+    entity_id: scene.snuggery_movies_play
