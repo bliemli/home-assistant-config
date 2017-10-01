@@ -31,6 +31,19 @@
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
+
+    snuggery_source:
+      value_template: >
+        {% if is_state_attr('media_player.snuggery', 'source', 'Playlist') %}
+        music
+        {% elif is_state_attr('media_player.snuggery', 'source', 'Kodi') %}
+        movies
+        {% elif is_state_attr('media_player.snuggery', 'source', 'Wii U') %}
+        wiiu
+        {% elif is_state_attr('media_player.snuggery', 'source', 'NES') %}
+        nes
+        {% endif %}
+
     active_media_players:
       friendly_name: 'Active Media Players'
       value_template: >

@@ -9,3 +9,13 @@
       entity_id: input_select.mediacenter
       option: 'off'
 
+- alias: 'Amp remote source change'
+  trigger:
+    platform: state
+    entity_id: sensor.snuggery_source
+  action:
+    service: input_select.select_option
+    data_template:
+      entity_id: input_select.mediacenter
+      option: '{{ trigger.to_state.state }}'
+
