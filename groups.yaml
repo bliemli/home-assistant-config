@@ -52,12 +52,6 @@
     - switch.mfi_phono
     - switch.mfi_wiiu
     - switch.mfi_nes
-  alertcontrol:
-    name: Alerts
-    icon: mdi:alert
-    entities:
-    - alert.power_consumption_detected
-    - alert.garage_door_open
   vacuumcontrol:
     name: Roomba
     control: hidden
@@ -73,4 +67,10 @@
     - cover.garage
     - automation.garage_door_opener
     - automation.garage_door_closer
+  alertcontrol:
+    name: Alerts
+    icon: mdi:alert
+    entities:
+    - alert.power_consumption_detected
+    - alert.garage_door_open
 
