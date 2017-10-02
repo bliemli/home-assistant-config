@@ -13,8 +13,11 @@
   trigger:
     platform: state
     entity_id: sensor.snuggery_source
+  condition:
+    condition: template
+    value_template: '{{ trigger.from_state.state != "none" }}'
   action:
-    service: input_select.select_option
+  - service: input_select.select_option
     data_template:
       entity_id: input_select.mediacenter
       option: '{{ trigger.to_state.state }}'

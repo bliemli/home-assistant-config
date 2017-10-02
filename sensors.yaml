@@ -34,7 +34,7 @@
 
     snuggery_source:
       value_template: >
-        {% if is_state_attr('media_player.snuggery', 'source', 'Playlist') %}
+        {% if is_state_attr('media_player.snuggery', 'source', 'Playlist') or is_state_attr('media_player.snuggery', 'source', 'Phono') %}
         music
         {% elif is_state_attr('media_player.snuggery', 'source', 'Kodi') %}
         movies
@@ -42,6 +42,8 @@
         wiiu
         {% elif is_state_attr('media_player.snuggery', 'source', 'NES') %}
         nes
+        {% else %}
+        none
         {% endif %}
 
     active_media_players:
