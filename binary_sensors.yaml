@@ -1,5 +1,5 @@
 - platform: rest
-  name: Travis Build Status
+  name: Travis Build
   resource: https://api.travis-ci.org/repos/bliemli/home-assistant-config/cc.json?branch=master
   scan_interval: 60
   value_template: "{{ value_json.last_build_status|int(1) == 0 }}"

@@ -3,7 +3,7 @@
     view: yes
     icon: mdi:home
     entities:
-    - binary_sensor.travis_build_status
+    - binary_sensor.travis_build
     - binary_sensor.garage_door
     - binary_sensor.roomba_bin
     - sensor.sab_speed
