@@ -46,8 +46,8 @@
   trigger:
     platform: state
     entity_id: binary_sensor.roomba_bin
-    from: 'false'
-    to: 'true'
+    from: 'off'
+    to: 'on'
   action:
     service: notify.pushover
     data:
