@@ -10,7 +10,8 @@ homeassistant:
 frontend:
 
 recorder:
-  purge_days: 30
+  purge_interval: 1
+  purge_keep_days: 7
 
 history:
 
