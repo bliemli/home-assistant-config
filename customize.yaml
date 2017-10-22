@@ -86,6 +86,9 @@
       friendly_name: 'Energy use NES'
       icon: mdi:gauge
 
+    sensor.travis_bliemlihomeassistantconfig_state:
+      friendly_name: 'Travis Build'
+
     alert.power_consumption_detected:
       icon: mdi:power-plug
     alert.garage_door_open:

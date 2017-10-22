@@ -25,11 +25,11 @@
     - !secret hibp_mail05
     - !secret hibp_mail06
 
-- platform: rest
-  name: Travis Build Time
-  resource: https://api.travis-ci.org/repos/bliemli/home-assistant-config/cc.json?branch=master
-  scan_interval: 60
-  value_template: "{{ value_json.last_build_finished_at }}"
+- platform: travisci
+  api_key: !secret travis_api_key
+  repository:
+  - home-assistant-config
+  entity_namespace: travis
 
 - platform: template
   sensors:

@@ -3,9 +3,9 @@
     view: yes
     icon: mdi:home
     entities:
-    - binary_sensor.travis_build
     - binary_sensor.garage_door
     - binary_sensor.roomba_bin
+    - sensor.travis_bliemlihomeassistantconfig_state
     - sensor.sab_speed
     - sensor.sab_left_gb
     - updater.updater
