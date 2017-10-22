@@ -98,3 +98,6 @@
       friendly_name: 'Lights'
       hidden: false
 
+    group.active_media_players:
+      order: 99
+
