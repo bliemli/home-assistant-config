@@ -31,6 +31,20 @@
   - home-assistant-config
   entity_namespace: travis
 
+- platform: rest
+  name: tv_source
+  resource: !secret philips_tv_source_api
+  value_template: >
+    {% if value_json.id == "30" %}
+      amp
+    {% elif value_json.id == "11" %}
+      tv
+    {% elif value_json.id == "34" %}
+      gamecube
+    {% else %}
+      other
+    {%endif %}
+
 - platform: template
   sensors:
     sab_left_gb:
@@ -41,15 +55,15 @@
     snuggery_source:
       value_template: >
         {% if is_state_attr('media_player.snuggery', 'source', 'Playlist') or is_state_attr('media_player.snuggery', 'source', 'Phono') %}
-        music
+          music
         {% elif is_state_attr('media_player.snuggery', 'source', 'Kodi') %}
-        movies
+          movies
         {% elif is_state_attr('media_player.snuggery', 'source', 'Wii U') %}
-        wiiu
+          wiiu
         {% elif is_state_attr('media_player.snuggery', 'source', 'NES') %}
-        nes
+          nes
         {% else %}
-        none
+          none
         {% endif %}
 
     active_media_players:

@@ -1,5 +1,0 @@
-  tv_get_source: "curl http://192.168.1.9:1925/1/sources/current"
-  tv_set_source_tv: "curl -d '{\"id\": \"11\"}' http://192.168.1.9:1925/1/sources/current"
-  tv_set_source_amp: "curl -d '{\"id\": \"30\"}' http://192.168.1.9:1925/1/sources/current"
-  tv_set_source_gamecube: "curl -d '{\"id\": \"34\"}' http://192.168.1.9:1925/1/sources/current"
-
