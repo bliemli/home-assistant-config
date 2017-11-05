@@ -22,13 +22,10 @@
 
     light.sphere_lamp_right:
       friendly_name: 'Sphere Lamp right'
-      icon: mdi:circle-outline
     light.sphere_lamp_left:
       friendly_name: 'Sphere Lamp left'
-      icon: mdi:circle-outline
     light.paper_lamp:
       friendly_name: 'Paper Lamp'
-      icon: mdi:blur-radial
     light.mood_stripe:
       hidden: true
 
