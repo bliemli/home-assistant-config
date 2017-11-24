@@ -1,7 +1,7 @@
   default_view:
     name: Home
     view: yes
-    icon: mdi:home
+    icon: mdi:home-assistant
     entities:
     - binary_sensor.garage_door
     - binary_sensor.roomba_bin
