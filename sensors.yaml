@@ -79,7 +79,6 @@
         {{ states.media_player
          | rejectattr('state', 'equalto', 'idle')
          | rejectattr('state', 'equalto', 'off')
-         | rejectattr('entity_id', 'equalto', 'media_player.snuggery')
          | map(attribute ='entity_id')
          | join(', ')
         }}
