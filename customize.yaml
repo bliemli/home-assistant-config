@@ -20,14 +20,8 @@
     vacuum.bodesuri:
       friendly_name: 'Bodesuri'
 
-    light.sphere_lamp_right:
-      friendly_name: 'Sphere Lamp right'
-    light.sphere_lamp_left:
-      friendly_name: 'Sphere Lamp left'
-    light.paper_lamp:
-      friendly_name: 'Paper Lamp'
-    light.mood_stripe:
-      hidden: true
+    light.bedroom_lightstrip:
+      icon: mdi:led-strip
 
     switch.mediacenter_music:
       friendly_name: 'Music'
