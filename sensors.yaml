@@ -45,6 +45,13 @@
       other
     {%endif %}
 
+- platform: rest
+  name: Aare
+  resource: http://aare.schwumm.ch/aare.json
+  unit_of_measurement: "°C"
+  value_template: '{{ value_json.temperature }}'
+  scan_interval: 3600
+
 - platform: template
   sensors:
     sab_left_gb:

@@ -5,6 +5,7 @@
     entities:
     - binary_sensor.garage_door
     - binary_sensor.roomba_bin
+    - sensor.aare
     - sensor.travis_bliemlihomeassistantconfig_state
     - sensor.sab_speed
     - sensor.sab_left_gb
