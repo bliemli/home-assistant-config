@@ -29,12 +29,10 @@ light:
   allow_hue_groups: false
 
 logger:
-  default: info
+  default: warn
   logs:
-    homeassistant.core: error
-    homeassistant.components.http: error
-    homeassistant.components.sensor: error
-    homeassistant.components.switch: error
+    urllib3.connectionpool: critical
+    homeassistant.components.sensor.rest: critical
 
 media_player:
 - platform: kodi
