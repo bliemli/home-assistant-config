@@ -5,16 +5,8 @@
   condition:
     condition: and
     conditions:
-    - condition: state
-      entity_id: !secret device1
-      state: 'not_home'
-    - condition: time
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - condition: template
+      value_template: '{{ states.group.all_devices.state != "home" }}'
   action:
     service: vacuum.start_pause
     entity_id: vacuum.bodesuri
