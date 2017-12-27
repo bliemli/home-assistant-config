@@ -2,29 +2,27 @@
   trigger:
     platform: state
     entity_id: media_player.kodi
-    from: 'playing'
     to: 'idle'
   condition:
     condition: state
     entity_id: light.sphere_lamp_left
     state: 'on'
   action:
-    service: scene.turn_on
-    entity_id: scene.snuggery_movies_pause
+    service: light.turn_on
+    entity_id: light.paper_lamp
 
 - alias: "Media player playing"
   trigger:
     platform: state
     entity_id: media_player.kodi
-    from: 'idle'
     to: 'playing'
   condition:
     condition: state
     entity_id: light.sphere_lamp_left
     state: 'on'
   action:
-    service: scene.turn_off
-    entity_id: scene.snuggery_movies_play
+    service: light.turn_off
+    entity_id: light.paper_lamp
 
 - alias: "Bedroom light timer"
   trigger:
