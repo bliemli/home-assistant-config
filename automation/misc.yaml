@@ -3,7 +3,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.pushover
+    service: notify.ios_bliemliphone7
     data_template:
       message: 'Home Assistant {{ trigger.to_state.state }} is available.'
 
