@@ -15,10 +15,13 @@ recorder:
 
 history:
 
+logbook:
+
 updater:
   reporting: no
 
 discovery:
+
 sun:
 
 device_tracker:
