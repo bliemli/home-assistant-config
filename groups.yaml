@@ -12,6 +12,7 @@
     - updater.updater
     - group.mediacenter
     - group.snuggery
+    - group.bedroom
     - group.active_media_players
     - camera.kirchberg_a1_richtung_bern
   settings:
@@ -42,6 +43,11 @@
     - scene.snuggery_relax
     - scene.snuggery_nightlight
     - scene.snuggery_off
+  bedroom:
+    name: Bedroom
+    entities:
+    - input_number.bedroom_sleep_timer
+    - script.start_bedroom_light_timer
   powercontrol:
     name: Power
     icon: mdi:power-socket

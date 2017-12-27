@@ -1,0 +1,7 @@
+  start_bedroom_light_timer:
+    sequence:
+      - service: timer.start
+        data_template:
+          entity_id: timer.bedroom_sleep_timer
+          duration: "00:{{ states('input_number.bedroom_sleep_timer') | int }}:00"
+

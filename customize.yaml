@@ -23,6 +23,10 @@
     light.bedroom_lightstrip:
       icon: mdi:led-strip
 
+    script.start_bedroom_light_timer:
+      friendly_name: 'Start light timer'
+      icon: mdi:weather-night
+
     switch.mediacenter_music:
       friendly_name: 'Music'
       icon: mdi:speaker

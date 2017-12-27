@@ -55,6 +55,10 @@ camera:
 
 ios:
 
+timer:
+  bedroom_sleep_timer:
+    duration: '00:15:00'
+
 notify:
 - platform: pushover
   name: pushover
@@ -70,7 +74,9 @@ alert: !include alerts.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 
+input_number: !include input_numbers.yaml
 input_select: !include input_selects.yaml
 rest_command: !include rest_commands.yaml
+script: !include scripts.yaml
 automation: !include_dir_merge_list automation
 

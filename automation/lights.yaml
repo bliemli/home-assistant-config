@@ -51,3 +51,14 @@
   action:
     service: scene.turn_off
     entity_id: scene.snuggery_movies_play
+
+- alias: "Bedroom light timer"
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data: 
+      entity_id: timer.bedroom_sleep_timer
+  action:
+    service: light.turn_off
+    entity_id: light.bedroom_lightstrip
+
