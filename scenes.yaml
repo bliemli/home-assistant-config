@@ -1,4 +1,4 @@
-- name: snuggery_standard
+- name: Snuggery Standard
   entities:
     light.sphere_lamp_left:
       state: on
@@ -16,7 +16,7 @@
       brightness: 50
       transition: 10
 
-- name: snuggery_relax
+- name: Snuggery Relax
   entities:
     light.sphere_lamp_left:
       state: on
@@ -34,7 +34,7 @@
       brightness: 1
       transition: 10
 
-- name: snuggery_nightlight
+- name: Snuggery Nightlight
   entities:
     light.sphere_lamp_left:
       state: on
@@ -52,7 +52,7 @@
       brightness: 1
       transition: 10
 
-- name: snuggery_energize
+- name: Snuggery Energize
   entities:
     light.sphere_lamp_left:
       state: on
@@ -70,7 +70,7 @@
       brightness: 4
       transition: 10
 
-- name: snuggery_movies_play
+- name: Snuggery Movies
   entities:
     light.sphere_lamp_left:
       state: on
@@ -103,7 +103,7 @@
       brightness: 1
       transition: 5
 
-- name: snuggery_off
+- name: Snuggery Off
   entities:
     light.sphere_lamp_left:
       state: off
