@@ -59,6 +59,3 @@
       transition: 5
     light.mediacenter:
       state: off
-
-  entities:
-
