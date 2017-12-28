@@ -50,12 +50,6 @@ vacuum:
   username: !secret roomba_blid
   password: !secret roomba_password
 
-camera:
-- platform: generic
-  name: Kirchberg A1 Richtung Bern
-  still_image_url: http://www.tbamobcam.ch/tbastrecke/tba003/stb_cam34.jpg
-  scan_interval: 600
-
 ios:
 
 timer:

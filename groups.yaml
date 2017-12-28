@@ -14,7 +14,6 @@
     - group.snuggery
     - group.bedroom
     - group.active_media_players
-    - camera.kirchberg_a1_richtung_bern
   settings:
     name: Settings
     icon: mdi:settings
