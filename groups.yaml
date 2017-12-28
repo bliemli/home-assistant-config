@@ -42,12 +42,14 @@
     - scene.snuggery_energize
     - scene.snuggery_relax
     - scene.snuggery_nightlight
-    - scene.snuggery_off
+    - light.couch
+    - light.mediacenter
   bedroom:
     name: Bedroom
     entities:
     - input_number.bedroom_sleep_timer
     - script.start_bedroom_light_timer
+    - light.bedroom
   powercontrol:
     name: Power
     icon: mdi:power-socket

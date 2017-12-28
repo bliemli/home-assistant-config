@@ -1,16 +1,11 @@
 - name: Snuggery Standard
   entities:
-    light.sphere_lamp_left:
+    light.couch:
       state: on
       color_temp: 365
       brightness: 254
       transition: 10
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 365
-      brightness: 254
-      transition: 10
-    light.paper_lamp:
+    light.mediacenter:
       state: on
       xy_color: [0.4257, 0.4003]
       brightness: 50
@@ -18,17 +13,12 @@
 
 - name: Snuggery Relax
   entities:
-    light.sphere_lamp_left:
+    light.couch:
       state: on
       color_temp: 467
       brightness: 144
       transition: 10
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 467
-      brightness: 144
-      transition: 10
-    light.paper_lamp:
+    light.mediacenter:
       state: on
       xy_color: [0.5972, 0.3781]
       brightness: 1
@@ -36,17 +26,12 @@
 
 - name: Snuggery Nightlight
   entities:
-    light.sphere_lamp_left:
+    light.couch:
       state: on
-      color_temp: 467
+      xy_color: [0.5609, 0.4042]
       brightness: 1
       transition: 10
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 467
-      brightness: 1
-      transition: 10
-    light.paper_lamp:
+    light.mediacenter:
       state: on
       xy_color: [0.65, 0.3398]
       brightness: 1
@@ -54,17 +39,12 @@
 
 - name: Snuggery Energize
   entities:
-    light.sphere_lamp_left:
+    light.couch:
       state: on
       color_temp: 156
       brightness: 254
       transition: 10
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 156
-      brightness: 254
-      transition: 10
-    light.paper_lamp:
+    light.mediacenter:
       state: on
       color_temp: 156
       brightness: 4
@@ -72,28 +52,13 @@
 
 - name: Snuggery Movies
   entities:
-    light.sphere_lamp_left:
+    light.couch:
       state: on
       color_temp: 467
       brightness: 144
       transition: 5
-    light.sphere_lamp_right:
-      state: on
-      color_temp: 467
-      brightness: 144
-      transition: 5
-    light.paper_lamp:
+    light.mediacenter:
       state: off
 
-- name: Snuggery Off
   entities:
-    light.sphere_lamp_left:
-      state: off
-      transition: 10
-    light.sphere_lamp_right:
-      state: off
-      transition: 10
-    light.paper_lamp:
-      state: off
-      transition: 10
 

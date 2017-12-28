@@ -5,7 +5,7 @@
     to: 'idle'
   condition:
     condition: state
-    entity_id: light.sphere_lamp_left
+    entity_id: light.couch
     state: 'on'
   action:
     service: light.turn_on
@@ -18,7 +18,7 @@
     to: 'playing'
   condition:
     condition: state
-    entity_id: light.sphere_lamp_left
+    entity_id: light.couch
     state: 'on'
   action:
     service: light.turn_off

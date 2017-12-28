@@ -22,6 +22,14 @@
 
     light.bedroom_lightstrip:
       icon: mdi:led-strip
+    light.bedroom:
+      hidden: true
+    light.couch:
+      hidden: true
+    light.doorway:
+      hidden: true
+    light.mediacenter:
+      hidden: true
 
     script.start_bedroom_light_timer:
       friendly_name: 'Start light timer'

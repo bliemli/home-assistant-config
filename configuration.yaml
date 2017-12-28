@@ -27,9 +27,9 @@ sun:
 device_tracker:
 - platform: locative
 
-light:
-  platform: hue
-  allow_hue_groups: false
+hue:
+  bridges:
+  - host: !secret hue_host
 
 logger:
   default: warn
