@@ -6,9 +6,10 @@
     - binary_sensor.garage_door
     - binary_sensor.roomba_bin
     - sensor.aare
-    - sensor.travis_bliemlihomeassistantconfig_state
+    - !secret ipad_sensor01
     - sensor.sab_speed
     - sensor.sab_left_gb
+    - sensor.travis_bliemlihomeassistantconfig_state
     - updater.updater
     - group.mediacenter
     - group.snuggery

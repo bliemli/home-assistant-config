@@ -73,6 +73,11 @@
       friendly_name: 'B&W ASW10CM'
       icon: mdi:power-socket
 
+    !secret ipad_sensor01:
+      friendly_name: 'iPad Battery'
+    sensor.travis_bliemlihomeassistantconfig_state:
+      friendly_name: 'Travis Build'
+
     sensor.mfi_amp:
       friendly_name: 'Energy use amp'
       icon: mdi:gauge
@@ -88,9 +93,6 @@
     sensor.mfi_nes:
       friendly_name: 'Energy use NES'
       icon: mdi:gauge
-
-    sensor.travis_bliemlihomeassistantconfig_state:
-      friendly_name: 'Travis Build'
 
     alert.power_consumption_detected:
       icon: mdi:power-plug
