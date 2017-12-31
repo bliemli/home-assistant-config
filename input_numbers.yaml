@@ -1,4 +1,4 @@
-  bedroom_sleep_timer:
+  bedroom_light_timed_switchoff:
     name: Timer duration
     initial: 15
     min: 5

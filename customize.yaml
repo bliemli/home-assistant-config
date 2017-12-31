@@ -31,7 +31,7 @@
     light.mediacenter:
       hidden: true
 
-    script.start_bedroom_light_timer:
+    script.bedroom_light_timed_switchoff:
       friendly_name: 'Start light timer'
       icon: mdi:weather-night
 

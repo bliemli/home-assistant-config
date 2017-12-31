@@ -47,8 +47,8 @@
   bedroom:
     name: Bedroom
     entities:
-    - input_number.bedroom_sleep_timer
-    - script.start_bedroom_light_timer
+    - input_number.bedroom_light_timed_switchoff
+    - script.bedroom_light_timed_switchoff
     - light.bedroom
   powercontrol:
     name: Power

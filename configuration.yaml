@@ -52,10 +52,6 @@ vacuum:
 
 ios:
 
-timer:
-  bedroom_sleep_timer:
-    duration: '00:15:00'
-
 notify:
 - platform: pushover
   name: pushover
