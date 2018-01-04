@@ -20,6 +20,12 @@
     view: yes
     icon: mdi:settings
     entities:
+    - sensor.mfi_amp
+    - sensor.mfi_subwoofer
+    - sensor.mfi_phono
+    - sensor.mfi_wiiu
+    - sensor.mfi_nes
+    - sensor.mfi_tv
     - group.powercontrol
     - group.garagecontrol
     - group.vacuumcontrol
