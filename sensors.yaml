@@ -76,10 +76,10 @@
     active_media_players:
       friendly_name: 'Active Media Players'
       value_template: >
-        {{ states.media_player
-         | rejectattr('state', 'equalto', 'idle')
-         | rejectattr('state', 'equalto', 'off')
-         | map(attribute ='entity_id')
-         | join(', ')
-        }}
+        {% if is_state("input_select.mediacenter", "music") %}
+          media_player.spotify
+        {% elif is_state("input_select.mediacenter", "movies") %}
+          media_player.kodi
+        {% else %}
+        {% endif %}
 
