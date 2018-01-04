@@ -39,6 +39,15 @@
       icon: mdi:brightness-3
 
     # Home - Bedroom
+    scene.bedroom_standard:
+      friendly_name: 'Standard'
+      icon: mdi:brightness-1
+    scene.bedroom_relax:
+      friendly_name: 'Relax'
+      icon: mdi:brightness-2
+    scene.bedroom_nightlight:
+      friendly_name: 'Nightlight'
+      icon: mdi:brightness-3
     script.bedroom_light_timed_switchoff:
       friendly_name: 'Start light timer'
       icon: mdi:sleep

@@ -59,3 +59,25 @@
       transition: 5
     light.mediacenter:
       state: off
+
+- name: Bedroom Standard
+  entities:
+    light.bedroom:
+      state: on
+      xy_color: [0.5454, 0.3953]
+      brightness: 1
+
+- name: Bedroom Relax
+  entities:
+    light.bedroom:
+      state: on
+      xy_color: [0.6161, 0.3073]
+      brightness: 1
+
+- name: Bedroom Nightlight
+  entities:
+    light.bedroom:
+      state: on
+      xy_color: [0.633, 0.3013]
+      brightness: 1
+

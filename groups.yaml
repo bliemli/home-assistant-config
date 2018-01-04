@@ -17,8 +17,8 @@
     - group.active_media_players
   settings:
     name: Settings
-    icon: mdi:settings
     view: yes
+    icon: mdi:settings
     entities:
     - group.powercontrol
     - group.garagecontrol
@@ -47,6 +47,9 @@
   bedroom:
     name: Bedroom
     entities:
+    - scene.bedroom_standard
+    - scene.bedroom_relax
+    - scene.bedroom_nightlight
     - input_number.bedroom_light_timed_switchoff
     - script.bedroom_light_timed_switchoff
     - light.bedroom
