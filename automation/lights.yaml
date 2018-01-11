@@ -1,4 +1,4 @@
-- alias: "Media player paused/stopped"
+- alias: Media player paused/stopped
   trigger:
     platform: state
     entity_id: media_player.kodi
@@ -11,7 +11,7 @@
     service: light.turn_on
     entity_id: light.paper_lamp
 
-- alias: "Media player playing"
+- alias: Media player playing
   trigger:
     platform: state
     entity_id: media_player.kodi

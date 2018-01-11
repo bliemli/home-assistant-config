@@ -1,4 +1,4 @@
-- alias: 'Garage door opener'
+- alias: Garage door opener
   trigger:
     platform: state
     entity_id: !secret device1
@@ -12,7 +12,7 @@
     service: cover.open_cover
     entity_id: cover.garage
 
-- alias: 'Garage door closer'
+- alias: Garage door closer
   trigger:
     platform: state
     entity_id: !secret device1

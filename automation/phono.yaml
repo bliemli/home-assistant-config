@@ -1,0 +1,17 @@
+- alias: Phono power on
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "music") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_phono
+- alias: Phono power off
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") or not is_state("input_select.mediacenter", "music") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_phono
+

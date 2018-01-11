@@ -1,0 +1,17 @@
+- alias: NES power on
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "nes") }}'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.mfi_nes
+- alias: NES power off
+  trigger:
+    platform: template
+    value_template: '{{ is_state("input_select.mediacenter", "off") or not is_state("input_select.mediacenter", "nes") }}'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.mfi_nes
+
