@@ -17,8 +17,18 @@ recorder:
   purge_keep_days: 7
 
 history:
+  exclude:
+    domains:
+    - automation
+    entities:
+    - binary_sensor.random_binary_sensor
+    - sensor.random_sensor
 
 logbook:
+  exclude:
+    entities:
+    - binary_sensor.random_binary_sensor
+    - sensor.random_sensor
 
 updater:
   reporting: no
