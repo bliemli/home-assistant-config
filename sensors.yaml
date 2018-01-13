@@ -6,7 +6,6 @@
   - 'current_status'
   - 'speed'
   - 'queue_remaining'
-
 - platform: mfi
   host: !secret mfi_host
   username: !secret mfi_username
@@ -15,7 +14,6 @@
   verify_ssl: false
   scan_interval: 3
   entity_namespace: mfi
-
 - platform: haveibeenpwned
   email: 
     - !secret hibp_mail01
@@ -24,15 +22,14 @@
     - !secret hibp_mail04
     - !secret hibp_mail05
     - !secret hibp_mail06
-
 - platform: travisci
   api_key: !secret travis_api_key
   repository:
   - home-assistant-config
   entity_namespace: travis
-
 - platform: rest
-  name: tv_source
+  name: philips_tv_source
+  scan_interval: 3
   resource: !secret philips_tv_source_api
   value_template: >
     {% if value_json.id == "30" %}
@@ -44,21 +41,18 @@
     {% else %}
       other
     {%endif %}
-
 - platform: rest
   name: Aare
   resource: http://aare.schwumm.ch/aare.json
   unit_of_measurement: "°C"
   value_template: '{{ value_json.temperature }}'
   scan_interval: 3600
-
 - platform: template
   sensors:
     sab_left_gb:
       friendly_name: 'SAB Left'
       unit_of_measurement: 'GB'
       value_template: '{{ (states("sensor.sab_left") | float / 1024) | round(1) }}'
-
     snuggery_source:
       value_template: >
         {% if is_state_attr('media_player.snuggery', 'source', 'Playlist') or is_state_attr('media_player.snuggery', 'source', 'Phono') %}
@@ -72,7 +66,6 @@
         {% else %}
           none
         {% endif %}
-
     active_media_players:
       friendly_name: 'Active Media Players'
       value_template: >
