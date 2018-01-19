@@ -49,7 +49,7 @@
       friendly_name: 'Nightlight'
       icon: mdi:brightness-3
     script.bedroom_light_timed_switchoff:
-      friendly_name: 'Start light timer'
+      friendly_name: 'Start Light Timer'
       icon: mdi:sleep
 
     # Home - Media players

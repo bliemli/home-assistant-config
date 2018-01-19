@@ -1,5 +1,5 @@
   bedroom_light_timed_switchoff:
-    name: Timer duration
+    name: Timer Duration
     initial: 15
     min: 5
     max: 30
