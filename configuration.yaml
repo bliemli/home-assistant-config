@@ -1,5 +1,4 @@
 homeassistant:
-  name: home
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: !secret elevation
@@ -83,6 +82,7 @@ alert: !include alerts.yaml
 group: !include groups.yaml
 scene: !include scenes.yaml
 
+input_boolean: !include input_booleans.yaml
 input_number: !include input_numbers.yaml
 input_select: !include input_selects.yaml
 rest_command: !include rest_commands.yaml

@@ -10,4 +10,8 @@
     url: !secret philips_tv_source_api
     method: post
     payload: '{"id":"34"}'
+  tv_mute_volume:
+    url: !secret philips_tv_volume_api
+    method: post
+    payload: '{"muted":true}'
 

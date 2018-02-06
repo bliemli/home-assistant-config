@@ -6,6 +6,7 @@
   - service: switch.turn_on
     data:
       entity_id: switch.mfi_tv
+
 - alias: TV power off
   trigger:
     platform: template
@@ -14,6 +15,7 @@
     service: switch.turn_off
     data:
       entity_id: switch.mfi_tv
+
 - alias: TV source TV
   trigger:
     platform: template
@@ -21,6 +23,7 @@
   action:
   - wait_template: '{{ states.sensor.philips_tv_source.state != "unavailable" }}'
   - service_template: '{{ "" if is_state("sensor.philips_tv_source", "tv") else "rest_command.tv_set_source_tv" }}'
+
 - alias: TV source GameCube
   trigger:
     platform: template
@@ -28,6 +31,7 @@
   action:
   - wait_template: '{{ states.sensor.philips_tv_source.state != "unavailable" }}'
   - service_template: '{{ "" if is_state("sensor.philips_tv_source", "gamecube") else "rest_command.tv_set_source_gamecube" }}'
+
 - alias: TV source Amp
   trigger:
     platform: template
@@ -35,4 +39,52 @@
   action:
   - wait_template: '{{ states.sensor.philips_tv_source.state != "unavailable" }}'
   - service_template: '{{ "" if is_state("sensor.philips_tv_source", "amp") else "rest_command.tv_set_source_amp" }}'
+
+- alias: Vacation Mode TV On
+  trigger:
+    platform: time
+    at: '19:45'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.random_sensor
+      state: 'on'
+  action:
+  - delay: '00:{{ states.sensor.random_sensor.state | int }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.mediacenter
+      option: 'tv'
+  - service: scene.turn_on
+    entity_id: scene.snuggery_relax
+  - wait_template: '{{ states.sensor.philips_tv_source.state != "unavailable" }}'
+  - service: rest_command.tv_mute_volume
+
+- alias: Vacation Mode TV Off
+  trigger:
+    platform: time
+    at: '22:00'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+    - condition: state
+      entity_id: input_select.mediacenter
+      state: 'tv'
+  action:
+  - delay: '00:{{ states.sensor.random_sensor.state | int }}'
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.mediacenter
+      option: 'off'
+  - service: light.turn_off
+    entity_id:
+    - light.couch
+    - light.mediacenter
 

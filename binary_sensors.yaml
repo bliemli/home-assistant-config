@@ -13,4 +13,5 @@
     roomba_bin:
       friendly_name: 'Roomba Bin'
       value_template: '{{ states.vacuum.bodesuri.attributes.bin_full }}'
+- platform: random
 

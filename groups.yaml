@@ -51,6 +51,7 @@
     - scene.snuggery_nightlight
     - light.couch
     - light.mediacenter
+    - input_boolean.vacation_mode
   bedroom:
     name: Bedroom
     entities:
