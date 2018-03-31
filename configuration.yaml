@@ -40,8 +40,6 @@ device_tracker:
 - platform: locative
 
 hue:
-  bridges:
-  - host: !secret hue_host
 
 logger:
   default: warn
