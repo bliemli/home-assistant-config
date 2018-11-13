@@ -5,7 +5,7 @@
     to: 'idle'
   condition:
     condition: state
-    entity_id: light.couch
+    entity_id: light.floor_lamp
     state: 'on'
   action:
     service: light.turn_on
@@ -18,7 +18,7 @@
     to: 'playing'
   condition:
     condition: state
-    entity_id: light.couch
+    entity_id: light.floor_lamp
     state: 'on'
   action:
     service: light.turn_off
@@ -49,7 +49,7 @@
   - delay: '00:{{ states.sensor.random_sensor.state | int }}'
   - service: light.turn_off
     entity_id:
-    - light.couch
+    - light.floor_lamp
     - light.mediacenter
 
 - alias: Vacation Mode Morning Lights On
@@ -79,12 +79,12 @@
       entity_id: input_boolean.vacation_mode
       state: 'on'
     - condition: state
-      entity_id: light.couch
+      entity_id: light.floor_lamp
       state: 'on'
   action:
   - delay: '00:{{ states.sensor.random_sensor.state | int }}'
   - service: light.turn_off
     entity_id:
-    - light.couch
+    - light.floor_lamp
     - light.mediacenter
 

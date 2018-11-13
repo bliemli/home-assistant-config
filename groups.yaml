@@ -49,8 +49,7 @@
     - scene.snuggery_energize
     - scene.snuggery_relax
     - scene.snuggery_nightlight
-    - light.couch
-    - light.mediacenter
+    - light.snuggery
     - input_boolean.vacation_mode
   bedroom:
     name: Bedroom

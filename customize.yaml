@@ -100,11 +100,7 @@
       icon: mdi:led-strip
     light.bedroom:
       hidden: true
-    light.couch:
-      hidden: true
-    light.doorway:
-      hidden: true
-    light.mediacenter:
+    light.snuggery:
       hidden: true
 
     # Settings - Roomba
