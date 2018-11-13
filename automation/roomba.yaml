@@ -27,7 +27,7 @@
 - alias: Roomba bad state alert
   trigger:
     platform: template
-    value_template: "{% if is_state_attr('vacuum.bodesuri', 'status', 'Charging') or is_state_attr('vacuum.bodesuri', 'status', 'Running') or is_state_attr('vacuum.bodesuri', 'status', 'End Mission') %}false{% else %}true{% endif %}"
+    value_template: "{% if is_state_attr('vacuum.bodesuri', 'status', 'Charging') or is_state_attr('vacuum.bodesuri', 'status', 'Running') or is_state_attr('vacuum.bodesuri', 'status', 'End Mission' or is_state_attr('vacuum.bodesuri', 'status', 'User Docking')) %}false{% else %}true{% endif %}"
   action:
     service: notify.ios_bliemliphone7
     data:
