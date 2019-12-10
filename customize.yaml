@@ -1,115 +1,53 @@
-    # Home - Sensors
-    !secret ipad_sensor01:
-      friendly_name: 'iPad Battery'
-    sensor.travis_bliemlihomeassistantconfig_state:
-      friendly_name: 'Travis Build'
+# Home - Media Center
+switch.mediacenter_music:
+  friendly_name: 'Music'
+  icon: mdi:speaker
+switch.mediacenter_movies:
+  friendly_name: 'Movies'
+  icon: mdi:kodi
+switch.mediacenter_tv:
+  friendly_name: 'TV'
+  icon: mdi:television
+switch.mediacenter_wiiu:
+  friendly_name: 'Wii U'
+  icon: mdi:wiiu
+switch.mediacenter_gamecube:
+  friendly_name: 'GameCube'
+  icon: mdi:cube
+switch.mediacenter_nes:
+  friendly_name: 'NES Classic Edition'
+  icon: mdi:gamepad-square
 
-    # Home - Media Center
-    switch.mediacenter_music:
-      friendly_name: 'Music'
-      icon: mdi:speaker
-    switch.mediacenter_movies:
-      friendly_name: 'Movies'
-      icon: mdi:kodi
-    switch.mediacenter_tv:
-      friendly_name: 'TV'
-      icon: mdi:television
-    switch.mediacenter_wiiu:
-      friendly_name: 'Wii U'
-      icon: mdi:wiiu
-    switch.mediacenter_gamecube:
-      friendly_name: 'GameCube'
-      icon: mdi:cube
-    switch.mediacenter_nes:
-      friendly_name: 'NES Classic Edition'
-      icon: mdi:gamepad-variant
+# Home - Power
+switch.mfi_amp:
+  friendly_name: 'Linn Majik DSM'
+  icon: mdi:power-socket
+switch.mfi_wiiu:
+  friendly_name: 'Wii U'
+  icon: mdi:power-socket
+switch.mfi_nes:
+  friendly_name: 'NES'
+  icon: mdi:power-socket
+switch.mfi_tv:
+  friendly_name: 'TV'
+  icon: mdi:power-socket
+switch.mfi_phono:
+  friendly_name: 'Phono'
+  icon: mdi:power-socket
+switch.mfi_subwoofer:
+  friendly_name: 'B&W ASW10CM'
+  icon: mdi:power-socket
 
-    # Home - Snuggery
-    scene.snuggery_standard:
-      friendly_name: 'Standard'
-      icon: mdi:brightness-1
-    scene.snuggery_energize:
-      friendly_name: 'Energize'
-      icon: mdi:brightness-5
-    scene.snuggery_relax:
-      friendly_name: 'Relax'
-      icon: mdi:brightness-2
-    scene.snuggery_nightlight:
-      friendly_name: 'Nightlight'
-      icon: mdi:brightness-3
-
-    # Home - Bedroom
-    scene.bedroom_standard:
-      friendly_name: 'Standard'
-      icon: mdi:brightness-1
-    scene.bedroom_relax:
-      friendly_name: 'Relax'
-      icon: mdi:brightness-2
-    scene.bedroom_nightlight:
-      friendly_name: 'Nightlight'
-      icon: mdi:brightness-3
-    script.bedroom_light_timed_switchoff:
-      friendly_name: 'Start Light Timer'
-      icon: mdi:sleep
-
-    # Home - Media players
-    group.active_media_players:
-      order: 99
-    media_player.snuggery:
-      friendly_name: 'Linn Majik DSM'
-
-    # Settings - Sensors 
-    sensor.mfi_amp:
-      friendly_name: 'Amp Energy'
-    sensor.mfi_nes:
-      friendly_name: 'NES Energy'
-    sensor.mfi_phono:
-      friendly_name: 'Phono Energy'
-    sensor.mfi_subwoofer:
-      friendly_name: 'Subwoofer Energy'
-    sensor.mfi_tv:
-      friendly_name: 'TV Energy'
-    sensor.mfi_wiiu:
-      friendly_name: 'Wii U Energy'
-
-    # Settings - Power
-    switch.mfi_amp:
-      friendly_name: 'Linn Majik DSM'
-      icon: mdi:power-socket
-    switch.mfi_wiiu:
-      friendly_name: 'Wii U'
-      icon: mdi:power-socket
-    switch.mfi_nes:
-      friendly_name: 'NES'
-      icon: mdi:power-socket
-    switch.mfi_tv:
-      friendly_name: 'TV'
-      icon: mdi:power-socket
-    switch.mfi_phono:
-      friendly_name: 'Phono'
-      icon: mdi:power-socket
-    switch.mfi_subwoofer:
-      friendly_name: 'B&W ASW10CM'
-      icon: mdi:power-socket
-
-    # Settings - Lights
-    group.all_lights:
-      friendly_name: 'Lights'
-      hidden: false
-    light.bedroom_lightstrip:
-      icon: mdi:led-strip
-    light.bedroom:
-      hidden: true
-    light.snuggery:
-      hidden: true
-
-    # Settings - Roomba
-    vacuum.bodesuri:
-      friendly_name: 'Bodesuri'
-
-    # Settings - Alerts
-    alert.power_consumption_detected:
-      icon: mdi:power-plug
-    alert.garage_door_open:
-      icon: mdi:garage-open
-
+# Home - Sensors 
+sensor.mfi_amp:
+  friendly_name: 'Amp Energy'
+sensor.mfi_nes:
+  friendly_name: 'NES Energy'
+sensor.mfi_phono:
+  friendly_name: 'Phono Energy'
+sensor.mfi_subwoofer:
+  friendly_name: 'Subwoofer Energy'
+sensor.mfi_tv:
+  friendly_name: 'TV Energy'
+sensor.mfi_wiiu:
+  friendly_name: 'Wii U Energy'

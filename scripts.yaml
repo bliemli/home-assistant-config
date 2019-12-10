@@ -1,7 +1,29 @@
-  bedroom_light_timed_switchoff:
-    sequence:
-      - delay: '00:{{ states.input_number.bedroom_light_timed_switchoff.state | int }}:00'
-      - service: light.turn_off
-        data:
-          entity_id: light.bedroom
-
+'1575719146935':
+  alias: Scene Living Room Relax
+  sequence:
+  - alias: ''
+    data:
+      group_name: Living Room
+      scene_name: Relax
+    service: hue.hue_activate_scene
+'1575720387859':
+  alias: Scene Living Room Nightlight
+  sequence:
+  - data:
+      group_name: Living Room
+      scene_name: Nightlight
+    service: hue.hue_activate_scene
+'1575720444538':
+  alias: Scene Living Room Relax Dining Table
+  sequence:
+  - data:
+      group_name: Living Room
+      scene_name: Relax Dining Table
+    service: hue.hue_activate_scene
+'1575720515567':
+  alias: Scene Living Room Bright
+  sequence:
+  - data:
+      group_name: Living Room
+      scene_name: Bright
+    service: hue.hue_activate_scene

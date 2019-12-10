@@ -1,0 +1,13 @@
+- id: '1575217504229'
+  alias: Roomba Cleanup
+  description: ''
+  trigger:
+  - at: '14:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - entity_id: vacuum.bodesuri
+    service: vacuum.start_pause

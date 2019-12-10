@@ -1,5 +1,5 @@
 - platform: mfi
-  host: !secret mfi_host
+  host: !secret mfi_host 
   username: !secret mfi_username
   password: !secret mfi_password
   ssl: true

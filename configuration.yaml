@@ -1,69 +1,46 @@
+config:
+frontend:
+mobile_app:
+ssdp:
+zeroconf:
+logbook:
+
 homeassistant:
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: !secret elevation
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
   unit_system: metric
-  time_zone: !secret time_zone
+  time_zone: !secret homeassistant_time_zone
   customize: !include customize.yaml
 
-frontend:
+discovery:
+  ignore:
+  - sonos
 
 http:
-  base_url: !secret base_url
-
-recorder:
-  purge_interval: 1
-  purge_keep_days: 7
+  base_url: !secret http_base_url
 
 history:
   exclude:
     domains:
     - automation
-    entities:
-    - binary_sensor.random_binary_sensor
-    - sensor.random_sensor
-
-logbook:
-  exclude:
-    entities:
-    - binary_sensor.random_binary_sensor
-    - sensor.random_sensor
-
-updater:
-  reporting: no
-
-discovery:
-
-sun:
-
-device_tracker:
-- platform: locative
 
 hue:
-
-logger:
-  default: warn
-  logs:
-    urllib3.connectionpool: critical
-    homeassistant.components.sensor.rest: critical
+  bridges:
+  - host: !secret hue_host
 
 media_player:
 - platform: kodi
-  host: !secret kodi_host
   name: Kodi
+  host: !secret kodi_host
 - platform: openhome
-- platform: spotify
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
 
 vacuum:
 - platform: roomba
-  name: bodesuri
+  name: Roomba
   host: !secret roomba_host
-  username: !secret roomba_blid
+  username: !secret roomba_username
   password: !secret roomba_password
-
-ios:
 
 notify:
 - platform: pushover
@@ -71,19 +48,53 @@ notify:
   api_key: !secret pushover_api_key
   user_key: !secret pushover_user_key
 
-binary_sensor: !include binary_sensors.yaml
-cover: !include covers.yaml
-sensor: !include sensors.yaml
+cover:
+  platform: opengarage
+  covers:
+    garage:        
+      name: Garage
+      host: !secret opengarage_host
+      device_key: !secret opengarage_device_key
+
+sensor:
+- platform: mfi
+  host: !secret mfi_host
+  username: !secret mfi_username
+  password: !secret mfi_password
+  ssl: true
+  verify_ssl: false
+  scan_interval: 3
+  entity_namespace: mfi
+- platform: template
+  sensors:
+    roomba_battery:
+      friendly_name: "Roomba Battery"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('vacuum.bodesuri', 'battery_level') }}"
+      icon_template: "{{ state_attr('vacuum.bodesuri', 'battery_icon') }}"
+
+binary_sensor:
+- platform: workday
+  country: !secret workday_country
+  province: !secret workday_province
+- platform: template
+  sensors:
+    roomba_bin_full:
+      friendly_name: "Roomba Bin Full"
+      value_template: >-
+        {{ state_attr('vacuum.bodesuri', 'bin_full') }}
+
+input_select:
+  mediacenter:
+    options:
+     - 'music'
+     - 'movies'
+     - 'tv'
+     - 'wiiu'
+     - 'gamecube'
+     - 'nes'
+     - 'off'
+
 switch: !include switches.yaml
-
-alert: !include alerts.yaml
-group: !include groups.yaml
-scene: !include scenes.yaml
-
-input_boolean: !include input_booleans.yaml
-input_number: !include input_numbers.yaml
-input_select: !include input_selects.yaml
-rest_command: !include rest_commands.yaml
 script: !include scripts.yaml
-automation: !include_dir_merge_list automation
-
+automation: !include automations.yaml
