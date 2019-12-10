@@ -83,6 +83,18 @@ binary_sensor:
       friendly_name: "Roomba Bin Full"
       value_template: >-
         {{ state_attr('vacuum.bodesuri', 'bin_full') }}
+    phono_standby:
+      friendly_name: "Phono Standby"
+      value_template: >-
+        {{ float(states.sensor.mfi_phono.state) < 1 }}
+    subwoofer_standby:
+      friendly_name: "Subwoofer Standby"
+      value_template: >-
+        {{ float(states.sensor.mfi_subwoofer.state) < 3 }}
+    wiiu_standby:
+      friendly_name: "Wii U Standby"
+      value_template: >-
+        {{ float(states.sensor.mfi_wiiu.state) < 3 }}
 
 input_select:
   mediacenter:
