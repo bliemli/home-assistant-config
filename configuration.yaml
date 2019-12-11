@@ -85,14 +85,17 @@ binary_sensor:
         {{ state_attr('vacuum.bodesuri', 'bin_full') }}
     phono_standby:
       friendly_name: "Phono Standby"
+      device_class: plug
       value_template: >-
         {{ float(states.sensor.mfi_phono.state) < 1 }}
     subwoofer_standby:
       friendly_name: "Subwoofer Standby"
+      device_class: plug
       value_template: >-
         {{ float(states.sensor.mfi_subwoofer.state) < 3 }}
     wiiu_standby:
       friendly_name: "Wii U Standby"
+      device_class: plug
       value_template: >-
         {{ float(states.sensor.mfi_wiiu.state) < 3 }}
 
