@@ -1,11 +1,9 @@
-- alias: Media player paused/stopped
-  trigger:
+- alias: Media player paused/stopped trigger:
     platform: state
-    entity_id: media_player.kodi
-    to: 'idle'
+    entity_id: media_player.kodi to: 'idle'
   condition:
     condition: state
-    entity_id: light.floor_lamp
+    entity_id: light.sphere_lamp_left
     state: 'on'
   action:
     service: light.turn_on
